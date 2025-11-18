@@ -5,7 +5,7 @@ import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail } from "lucide-react";
+import { Mail, Link as LinkIcon } from "lucide-react";
 export function HomePage() {
   const {
     name,
@@ -16,6 +16,7 @@ export function HomePage() {
     education,
     skills,
     certifications,
+    researchAndPublications,
     projects,
     languages,
     interests,
@@ -152,6 +153,25 @@ export function HomePage() {
                   <div>
                     <p className="font-semibold text-portfolio-primary">{cert.name}</p>
                     <p className="text-sm text-portfolio-muted">{cert.issuer}{cert.year && ` - ${cert.year}`}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </PortfolioSection>
+        {/* Research and Publication Section */}
+        <PortfolioSection id="research" title="Research and Publication">
+          <div className="max-w-3xl mx-auto space-y-4">
+            {researchAndPublications.map((pub, index) => (
+              <Card key={index} className="p-4 transition-all duration-300 hover:shadow-lg">
+                <div className="flex items-start">
+                  <pub.icon className="w-8 h-8 mr-4 text-blue-800 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-portfolio-primary">{pub.title}</p>
+                    <p className="text-sm text-portfolio-muted italic">{pub.journal}</p>
+                    <a href={pub.url} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline flex items-center mt-1">
+                      View Publication <LinkIcon className="w-3 h-3 ml-1" />
+                    </a>
                   </div>
                 </div>
               </Card>

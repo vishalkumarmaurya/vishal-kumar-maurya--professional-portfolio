@@ -110,6 +110,12 @@ export const portfolioData = {
       url: "#",
       icon: FileText,
     },
+    {
+      title: "Integrating Multi-Omics Approaches to Uncover Disease Resistance Mechanisms in Underutilized Crops",
+      journal: "ResearchGate",
+      url: "https://doi.org/10.13140/RG.2.2.32849.60004",
+      icon: FileText,
+    },
   ],
   projects: [
     {

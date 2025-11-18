@@ -102,6 +102,12 @@ export const portfolioData = {
       year: "",
       icon: Award,
     },
+    {
+      name: "Innovations in Agricultural Extension: Integrating Research, Policy and Practices",
+      issuer: "National Institute of Agricultural Extension Management (MANAGE)",
+      year: "",
+      icon: Award,
+    },
   ],
   researchAndPublications: [
     {

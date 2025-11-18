@@ -108,6 +108,12 @@ export const portfolioData = {
       year: "",
       icon: Award,
     },
+    {
+      name: "Extension for Horticultural Technologies",
+      issuer: "National Institute of Agricultural Extension Management (MANAGE), Hyderabad in collaboration with ICAR-National Research Centre on Litchi, Muzaffarpur, Bihar",
+      year: "",
+      icon: Award,
+    },
   ],
   researchAndPublications: [
     {

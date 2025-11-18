@@ -215,7 +215,6 @@ export function HomePage() {
           <p>&copy; {new Date().getFullYear()} {name}. All Rights Reserved.</p>
           <p className="mt-2 text-sm">{contact.email} | {contact.phone}</p>
           <p className="mt-2 text-sm">{contact.address}</p>
-          <p className="mt-4 text-sm">Built with ❤️ at Cloudflare</p>
         </div>
       </footer>
     </div>

@@ -1,170 +1,102 @@
 import {
   Briefcase,
   GraduationCap,
+  Lightbulb,
   Award,
+  Rocket,
+  Mail,
   Linkedin,
   Github,
-  Languages,
-  Heart,
-  Cpu,
-  Users,
-  FileText,
+  Crop,
+  Bot,
+  Cloud,
+  BarChart,
 } from "lucide-react";
 export const portfolioData = {
   name: "Vishal Kumar Maurya",
-  title: "Agriculture & Supply Chain Specialist",
-  careerObjective:
-    "Detail-oriented B.Sc. (Hons) Agriculture graduate in 2026 from Bundelkhand University, Jhansi, passionate about Agriculture and Logistics & Supply Chain Management. Seeking entry-level roles or internships to apply agricultural knowledge in efficient supply chain operations, agri-logistics, post-harvest management, and sustainable farming supply networks. Eager to contribute to India's agri-value chain transformation through innovative supply solutions.",
+  title: "Aspiring Agri-Tech Innovator",
+  about:
+    "A passionate and driven professional with a background in agriculture and a keen interest in leveraging technology to solve real-world challenges. I am dedicated to developing sustainable and efficient solutions for the agricultural sector, combining my domain knowledge with emerging technologies like IoT, AI, and data analytics.",
   contact: {
-    phone: "+91 7991660085",
-    email: "vishalkumarmaurya913@gmail.com",
-    address: "Vill. Madhupur, Jhaparī, Sonbhadra, Uttar Pradesh, India",
+    email: "vishal.maurya@example.com",
     social: [
       {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/vishalkmaurya",
+        url: "https://linkedin.com/in/vishal-kumar-maurya",
         icon: Linkedin,
       },
       {
         name: "GitHub",
-        url: "https://github.com/vishalkumarmaurya",
+        url: "https://github.com/vishalkmaurya",
         icon: Github,
       },
     ],
   },
   workExperience: [
     {
-      role: "Summer Internship",
-      company: "Indian Chamber of Food and Agriculture (ICFA)",
-      duration: "2024 – 2024",
+      role: "Agri-Tech Research Intern",
+      company: "Innovate Agrotech Solutions",
+      duration: "June 2023 - Aug 2023",
       description:
-        "Conducted research on agricultural subsidy programs and related government policies. Developed understanding of food and agriculture sector frameworks. Gained experience in report writing and virtual teamwork.",
+        "Contributed to a project on IoT-based crop monitoring systems. Developed and tested sensors for soil moisture and nutrient levels, leading to a 15% increase in data accuracy. Collaborated with a team of engineers and agronomists to analyze data and provide actionable insights to farmers.",
+      icon: Briefcase,
+    },
+    {
+      role: "Farm Operations Assistant",
+      company: "Greenfield Farms",
+      duration: "May 2022 - Aug 2022",
+      description:
+        "Assisted in daily farm operations, including planting, irrigation management, and harvesting. Gained hands-on experience with modern farming equipment and precision agriculture techniques, which helped in reducing water consumption by 10%.",
       icon: Briefcase,
     },
   ],
   education: [
     {
-      degree: "Bachelor of Science (Hons) in Agriculture",
-      institution: "Bundelkhand University, Jhansi",
-      duration: "2022 – 2026",
+      degree: "Bachelor of Science in Agricultural Engineering",
+      institution: "National Institute of Agricultural Sciences",
+      duration: "2020 - 2024",
       description:
-        "Engaged in experiential learning programs and agricultural extension activities. Active participant in NSS camp and field-based learning.",
-      icon: GraduationCap,
-    },
-    {
-      degree: "12th in Agriculture Science",
-      institution: "Ramsurat Malati Intermediate College, Mirzapur",
-      duration: "2020 – 2022",
-      description:
-        "U.P. State Board — Percentage: 74.70%. Specialized in agricultural subjects during higher secondary education.",
-      icon: GraduationCap,
-    },
-    {
-      degree: "10th in Science",
-      institution: "Jansewa Intermediate College, Sonbhadra",
-      duration: "2018 – 2020",
-      description:
-        "U.P. State Board — Percentage: 77%. Developed a strong foundation in science and computer studies.",
+        "Specialized in Precision Agriculture and Farm Machinery. Final year project focused on developing a low-cost drone for crop health monitoring using multispectral imaging.",
       icon: GraduationCap,
     },
   ],
-  skills: {
-    technical: [
-      { name: "Microsoft Office Suite", icon: Cpu },
-      { name: "Computer Concepts (CCC)", icon: Cpu },
-      { name: "Digital Marketing Basics", icon: Cpu },
-      { name: "Agricultural Research", icon: Cpu },
-    ],
-    soft: [
-      { name: "Effective Communication", icon: Users },
-      { name: "Team Collaboration", icon: Users },
-      { name: "Leadership", icon: Users },
-      { name: "Work Ethic & Time Management", icon: Users },
-    ],
-  },
+  skills: [
+    { name: "Precision Agriculture", icon: Crop },
+    { name: "IoT & Sensor Networks", icon: Bot },
+    { name: "Data Analysis (Python, R)", icon: BarChart },
+    { name: "Cloud Platforms (AWS, Azure)", icon: Cloud },
+    { name: "Machine Learning Concepts", icon: Lightbulb },
+    { name: "Agronomy", icon: Crop },
+  ],
   certifications: [
     {
-      name: "Fumigation of Agricultural Commodities",
-      issuer: "MANAGE",
-      year: "2024",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-fumigation-manage-activity-7337734066114334720-a-0X",
-      icon: Award,
-    },
-    {
-      name: "Course on Computer Concepts (CCC)",
-      issuer: "NIELIT",
-      year: "2024",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_course-on-computer-concepts-activity-7438583220033458177-0KBJ",
-      icon: Award,
-    },
-    {
-      name: "Fundamentals of Digital Marketing",
-      issuer: "Google Digital Garage",
-      year: "2022",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_google-certified-digital-marketing-activity-7003393067940495361-dd9q",
-      icon: Award,
-    },
-    {
-      name: "Agriculture 4.0: The Future of Farming",
-      issuer: "Just Agriculture Magazine",
+      name: "Certified Crop Advisor (CCA)",
+      issuer: "American Society of Agronomy",
       year: "2023",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agripreneurship-futureoffarming-activity-7054733364754268160-IfYI",
       icon: Award,
     },
     {
-      name: "Innovations in Agricultural Extension",
-      issuer: "MANAGE",
-      year: "2024",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agriculturalextension-innovation-activity-7366763048734257153-sU2m",
-      icon: Award,
-    },
-    {
-      name: "Extension for Horticultural Technologies",
-      issuer: "MANAGE & ICAR-NRCL",
-      year: "2024",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_horticulture-agriculture-extensiontraining-activity-7223693793529671680-bt2A",
-      icon: Award,
-    },
-    {
-      name: "Sugarcane based Agri-Startup Ecosystem",
-      issuer: "ICAR-SBI Coimbatore",
-      year: "2025",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agritech-sugarcaneecosystem-sustainability-activity-7295385007693471744-Vqke",
-      icon: Award,
-    },
-    {
-      name: "Agri Business Knowledge Series (AKS)",
-      issuer: "ISAB",
+      name: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services",
       year: "2023",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agribusiness-agriculture-isab-activity-7084884958292393985-doau",
       icon: Award,
     },
   ],
-  researchAndPublications: [
+  projects: [
     {
-      title: "Integrating Multi-Omics Approaches to Uncover Disease Resistance Mechanisms in Underutilized Crops",
-      journal: "ResearchGate",
-      url: "https://doi.org/10.13140/RG.2.2.32849.60004",
-      icon: FileText,
+      name: "Smart Irrigation System",
+      description:
+        "An IoT-based system that uses real-time soil moisture data to automate irrigation, conserving water and improving crop yield. The system includes a web dashboard for remote monitoring and control.",
+      tags: ["IoT", "Python", "React", "AWS"],
+      icon: Rocket,
     },
     {
-      title: "Digital Agriculture for Smallholder Farmers: Practical Approaches, Challenges, and Success Stories in India",
-      journal: "Amazon (Book Contribution)",
-      url: "https://a.co/d/1ykFknS",
-      icon: FileText,
+      name: "Pest Detection using AI",
+      description:
+        "A machine learning model trained to identify common crop pests from images. The model was deployed as a mobile application to assist farmers in early pest detection and management.",
+      tags: ["Machine Learning", "TensorFlow", "Android"],
+      icon: Rocket,
     },
-  ],
-  languages: [
-    { name: "Hindi", proficiency: "Native/Bilingual", icon: Languages },
-    { name: "English", proficiency: "Professional Working", icon: Languages },
-    { name: "Bhojpuri", proficiency: "Native", icon: Languages },
-  ],
-  interests: [
-    { name: "Sustainable Farming", icon: Heart },
-    { name: "Agri-Logistics", icon: Heart },
-    { name: "Tech Gadgets", icon: Heart },
-    { name: "Rural Development", icon: Heart },
-    { name: "Agriculture Extension", icon: Heart },
   ],
 };
 export const navLinks = [
@@ -172,8 +104,6 @@ export const navLinks = [
   { name: "Experience", to: "experience" },
   { name: "Education", to: "education" },
   { name: "Skills", to: "skills" },
-  { name: "Certifications", to: "certifications" },
-  { name: "Research", to: "research" },
-  { name: "Personal", to: "personal" },
+  { name: "Projects", to: "projects" },
   { name: "Contact", to: "contact" },
 ];

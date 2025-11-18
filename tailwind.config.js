@@ -13,11 +13,12 @@ export default {
   				'Roboto',
   				'sans-serif'
   			],
-			display: [
-				'Inter',
-				'system-ui',
-				'sans-serif'
-			],
+  			display: [
+  				'Cal Sans',
+  				'Inter',
+  				'system-ui',
+  				'sans-serif'
+  			],
   			mono: [
   				'JetBrains Mono',
   				'Fira Code',
@@ -90,6 +91,11 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+        portfolio: {
+          background: 'hsl(210 40% 98%)',
+          primary: 'hsl(222 47% 11%)',
+          muted: 'hsl(215 20% 65%)',
+        },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			muted: {

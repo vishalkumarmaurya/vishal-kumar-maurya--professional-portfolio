@@ -41,7 +41,7 @@ export function HomePage() {
                 <a href={`mailto:${contact.email}`}>Contact Me</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <a href="/resume.pdf" download>Download CV</a>
+                <a href="/cv" target="_blank" rel="noopener noreferrer">Download CV</a>
               </Button>
             </div>
           </div>

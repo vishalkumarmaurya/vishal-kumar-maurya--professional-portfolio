@@ -2,8 +2,7 @@ import React from "react";
 import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Printer, ArrowLeft, ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin, Linkedin, Github, Printer } from "lucide-react";
 export function CVPage() {
   const {
     name,
@@ -14,185 +13,133 @@ export function CVPage() {
     education,
     skills,
     certifications,
-    researchAndPublications,
     languages,
     interests,
   } = portfolioData;
   const handlePrint = () => {
     window.print();
   };
-  const formatUrl = (url: string) => {
-    return url.replace(/^https?:\/\/(www\.)?/, "");
-  };
   return (
-    <div className="bg-slate-50 min-h-screen p-6 sm:p-12 print:p-0 print:bg-white font-sans">
-      {/* Utility Navigation Bar */}
-      <div className="max-w-4xl mx-auto mb-8 flex items-center justify-between px-4 sm:px-0 print:hidden">
-        <Button asChild variant="ghost" className="text-slate-600 hover:bg-slate-200 font-bold uppercase tracking-widest text-xs">
-          <Link to="/" className="flex items-center gap-2">
-            <ArrowLeft size={16} /> Back
-          </Link>
-        </Button>
-        <Button onClick={handlePrint} className="bg-slate-950 text-white rounded-full hover:bg-slate-800 transition-all px-8 shadow-xl font-bold uppercase tracking-widest text-xs">
-          <Printer className="w-4 h-4 mr-2" /> Print / Export
-        </Button>
-      </div>
-      <div className="max-w-4xl mx-auto bg-white shadow-2xl print:shadow-none p-8 sm:p-16 print:p-0 text-slate-900 border-t-[16px] border-slate-950">
-        <header className="flex flex-col md:flex-row justify-between items-start border-b-2 border-slate-950 pb-12 mb-12">
-          <div className="flex-1 pr-6">
-            <h1 className="text-5xl sm:text-6xl font-black text-slate-950 uppercase tracking-tighter leading-none">{name}</h1>
-            <p className="text-xl sm:text-2xl text-blue-700 font-black mt-3 uppercase tracking-[0.15em]">{title}</p>
+    <div className="bg-gray-100 min-h-screen p-4 sm:p-8 print:p-0 print:bg-white">
+      <div className="max-w-4xl mx-auto bg-white shadow-lg p-8 sm:p-12 print:shadow-none print:p-8 font-sans text-gray-800">
+        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-gray-200 pb-6">
+          <div>
+            <h1 className="text-4xl font-bold text-gray-900">{name}</h1>
+            <p className="text-xl text-gray-600 mt-1">{title}</p>
           </div>
-          <div className="mt-8 md:mt-0 text-[13px] text-slate-700 space-y-2.5 md:text-right shrink-0">
-            <a href={`mailto:${contact.email}`} className="flex items-center md:justify-end gap-3 hover:text-blue-700 transition-colors">
-              <span className="font-bold text-slate-950">{contact.email}</span>
-              <Mail size={16} className="text-slate-400 shrink-0" />
+          <div className="text-sm text-gray-600 mt-4 sm:mt-0 sm:text-right space-y-1">
+            <a href={`mailto:${contact.email}`} className="flex items-center justify-start sm:justify-end gap-2 hover:text-blue-600">
+              <Mail size={14} /> {contact.email}
             </a>
-            <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="flex items-center md:justify-end gap-3 hover:text-blue-700 transition-colors">
-              <span className="font-bold text-slate-950">{contact.phone}</span>
-              <Phone size={16} className="text-slate-400 shrink-0" />
+            <a href={`tel:${contact.phone}`} className="flex items-center justify-start sm:justify-end gap-2 hover:text-blue-600">
+              <Phone size={14} /> {contact.phone}
             </a>
-            <p className="flex items-center md:justify-end gap-3 text-right">
-              <span className="font-bold text-slate-950 text-pretty max-w-[240px]">{contact.address}</span>
-              <MapPin size={16} className="text-slate-400 shrink-0" />
+            <p className="flex items-center justify-start sm:justify-end gap-2">
+              <MapPin size={14} /> {contact.address}
             </p>
-            <div className="flex flex-col md:items-end gap-2 pt-4">
-              {contact.social.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center md:justify-end gap-3 text-xs font-black uppercase text-blue-700 hover:text-blue-900 transition-colors group"
-                >
-                  <span className="truncate max-w-[200px] border-b border-transparent group-hover:border-blue-700">{formatUrl(social.url)}</span>
-                  <social.icon size={16} className="text-slate-400 group-hover:text-blue-700 shrink-0" />
-                </a>
-              ))}
+            <div className="flex items-center justify-start sm:justify-end gap-4 pt-1">
+              <a href={contact.social.find(s => s.name === "LinkedIn")?.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-blue-600">
+                <Linkedin size={14} /> LinkedIn
+              </a>
+              <a href={contact.social.find(s => s.name === "GitHub")?.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-blue-600">
+                <Github size={14} /> GitHub
+              </a>
             </div>
           </div>
         </header>
-        <main className="space-y-10">
-          <section className="print:break-inside-avoid">
-            <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Profile</h2>
-            <p className="text-slate-800 leading-relaxed font-medium text-[15px] whitespace-pre-line">{careerObjective}</p>
-          </section>
+        <main className="mt-8">
           <section>
-            <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-8 border-b border-slate-100 pb-2">Experience</h2>
-            <div className="space-y-10">
-              {workExperience.map((job, index) => (
-                <div key={index} className="print:break-inside-avoid">
-                  <div className="flex justify-between items-start mb-2 gap-4">
-                    <h3 className="text-xl font-black text-slate-950 uppercase tracking-tight">{job.company}</h3>
-                    <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest pt-1">{job.duration}</span>
-                  </div>
-                  <p className="text-md font-black text-blue-700 uppercase tracking-wider mb-4">{job.role}</p>
-                  <p className="text-slate-700 leading-relaxed text-[14px] font-medium whitespace-pre-line">{job.description}</p>
-                </div>
-              ))}
-            </div>
+            <h2 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">Career Objective</h2>
+            <p className="text-gray-700 leading-relaxed">{careerObjective}</p>
           </section>
-          <section>
-            <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-8 border-b border-slate-100 pb-2">Education</h2>
-            <div className="space-y-10">
-              {education.map((edu, index) => (
-                <div key={index} className="print:break-inside-avoid">
-                  <div className="flex justify-between items-start mb-2 gap-4">
-                    <h3 className="text-xl font-black text-slate-950 uppercase tracking-tight">{edu.institution}</h3>
-                    <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest pt-1">{edu.duration}</span>
-                  </div>
-                  <p className="text-md font-black text-blue-700 uppercase tracking-wider mb-4">{edu.degree}</p>
-                  <p className="text-slate-700 leading-relaxed text-[14px] font-medium whitespace-pre-line">{edu.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <section className="print:break-inside-avoid">
-              <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Technical</h2>
-              <div className="flex flex-wrap gap-2">
-                {skills.technical.map((skill) => (
-                  <Badge key={skill.name} variant="outline" className="border-slate-300 text-slate-950 font-black uppercase text-[10px] py-1 px-3">
-                    {skill.name}
-                  </Badge>
-                ))}
-              </div>
-            </section>
-            <section className="print:break-inside-avoid">
-              <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Soft Skills</h2>
-              <div className="flex flex-wrap gap-2">
-                {skills.soft.map((skill) => (
-                  <Badge key={skill.name} variant="outline" className="border-slate-300 text-slate-950 font-black uppercase text-[10px] py-1 px-3">
-                    {skill.name}
-                  </Badge>
-                ))}
-              </div>
-            </section>
-          </div>
-          <section className="print:break-inside-avoid">
-            <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Certifications</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-              {certifications.map((cert, index) => (
-                <div key={index} className="flex items-start gap-3 text-[13px] leading-tight group">
-                  <div className="w-2 h-2 rounded-full bg-blue-700 mt-1.5 shrink-0" />
-                  <div className="flex-1">
-                    {cert.url ? (
-                      <a
-                        href={cert.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-black text-slate-950 uppercase tracking-tight hover:text-blue-700 flex items-center gap-1 group/link"
-                      >
-                        {cert.name} <ExternalLink size={10} className="print:hidden opacity-0 group-hover/link:opacity-100 transition-opacity" />
-                      </a>
-                    ) : (
-                      <span className="font-black text-slate-950 uppercase tracking-tight">{cert.name}</span>
-                    )}
-                    <span className="text-slate-500 font-bold block mt-1 uppercase text-[10px] tracking-widest">{cert.issuer}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-          <section className="print:break-inside-avoid">
-            <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Research</h2>
+          <section className="mt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">Work Experience</h2>
             <div className="space-y-6">
-              {researchAndPublications.map((pub, index) => (
-                <div key={index} className="text-[13px] pb-6 border-b border-slate-50 last:border-0 last:pb-0">
-                  <p className="font-black text-slate-950 uppercase tracking-tight leading-snug">{pub.title}</p>
-                  <p className="text-blue-700 uppercase text-[10px] font-black tracking-[0.3em] mt-2">{pub.journal}</p>
-                  <a href={pub.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black uppercase text-blue-700 hover:underline mt-2 inline-block print:hidden">Verify Publication</a>
+              {workExperience.map((job, index) => (
+                <div key={index}>
+                  <div className="flex justify-between items-baseline flex-wrap">
+                    <h3 className="text-lg font-bold text-gray-900">{job.role}</h3>
+                    <p className="text-sm text-gray-500">{job.duration}</p>
+                  </div>
+                  <p className="text-md font-medium text-gray-700">{job.company}</p>
+                  <p className="text-gray-700 mt-2 leading-relaxed">{job.description}</p>
                 </div>
               ))}
             </div>
           </section>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <section className="print:break-inside-avoid">
-              <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Languages</h2>
-              <ul className="space-y-3">
-                {languages.map((lang) => (
-                  <li key={lang.name} className="text-sm flex justify-between items-center">
-                    <span className="font-black text-slate-950 uppercase tracking-widest">{lang.name}</span>
-                    <span className="text-slate-500 uppercase text-[10px] font-black">{lang.proficiency}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
-            <section className="print:break-inside-avoid">
-              <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Interests</h2>
-              <div className="flex flex-wrap gap-x-6 gap-y-2">
-                {interests.map((interest) => (
-                  <span key={interest.name} className="text-sm font-black text-slate-950 uppercase tracking-widest">
-                    {interest.name}
-                  </span>
-                ))}
+          <section className="mt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">Education</h2>
+            <div className="space-y-6">
+              {education.map((edu, index) => (
+                <div key={index}>
+                  <div className="flex justify-between items-baseline flex-wrap">
+                    <h3 className="text-lg font-bold text-gray-900">{edu.degree}</h3>
+                    <p className="text-sm text-gray-500">{edu.duration}</p>
+                  </div>
+                  <p className="text-md font-medium text-gray-700">{edu.institution}</p>
+                  <p className="text-gray-700 mt-2 leading-relaxed">{edu.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+          <section className="mt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">Skills</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Technical Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skills.technical.map((skill) => (
+                    <Badge key={skill.name} variant="secondary" className="bg-blue-100 text-blue-800 font-medium">{skill.name}</Badge>
+                  ))}
+                </div>
               </div>
-            </section>
-          </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Soft Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skills.soft.map((skill) => (
+                    <Badge key={skill.name} variant="secondary" className="bg-green-100 text-green-800 font-medium">{skill.name}</Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className="mt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">Certifications</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-700">
+              {certifications.map((cert, index) => (
+                <li key={index}>
+                  <span className="font-semibold text-gray-800">{cert.name}</span> - {cert.issuer}
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section className="mt-8">
+            <h2 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">Languages & Interests</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Languages</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  {languages.map((lang) => (
+                    <li key={lang.name}>{lang.name} ({lang.proficiency})</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Interests</h3>
+                <ul className="list-disc list-inside space-y-1 text-gray-700">
+                  {interests.map((interest) => (
+                    <li key={interest.name}>{interest.name}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
         </main>
-        <footer className="mt-12 pt-10 border-t border-slate-100 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400">
-          Professional CV • {name} • {new Date().getFullYear()}
-        </footer>
+      </div>
+      <div className="fixed bottom-8 right-8 print:hidden">
+        <Button onClick={handlePrint} size="lg" className="bg-blue-800 hover:bg-blue-900 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <Printer className="w-5 h-5 mr-2" /> Print CV
+        </Button>
       </div>
     </div>
   );

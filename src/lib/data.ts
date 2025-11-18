@@ -4,25 +4,26 @@ import {
   Lightbulb,
   Award,
   Rocket,
-  Mail,
   Linkedin,
   Github,
-  Crop,
-  Bot,
-  Cloud,
-  BarChart,
+  Languages,
+  Heart,
+  Cpu,
+  Users,
 } from "lucide-react";
 export const portfolioData = {
   name: "Vishal Kumar Maurya",
   title: "Aspiring Agri-Tech Innovator",
-  about:
-    "A passionate and driven professional with a background in agriculture and a keen interest in leveraging technology to solve real-world challenges. I am dedicated to developing sustainable and efficient solutions for the agricultural sector, combining my domain knowledge with emerging technologies like IoT, AI, and data analytics.",
+  careerObjective:
+    "Motivated and detail-oriented undergraduate student pursuing a B.Sc. (Hons) in Agriculture at Bundelkhand University, Jhansi. Dedicated to developing a strong foundation in agricultural science and technology. Seeking opportunities for internships and professional roles to gain field experience, enhance technical knowledge, and contribute to the agricultural sector’s growth.",
   contact: {
-    email: "vishal.maurya@example.com",
+    phone: "7991660085",
+    email: "vishalkumarmaurya913@gmail.com",
+    address: "Vill. Madhupur, Jhaparī, Sonbhadra, Uttar Pradesh, India",
     social: [
       {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/vishal-kumar-maurya",
+        url: "https://linkedin.com/in/vishalkmaurya",
         icon: Linkedin,
       },
       {
@@ -34,51 +35,70 @@ export const portfolioData = {
   },
   workExperience: [
     {
-      role: "Agri-Tech Research Intern",
-      company: "Innovate Agrotech Solutions",
-      duration: "June 2023 - Aug 2023",
+      role: "Agricultural Subsidies Intern",
+      company: "Indian Chamber of Food and Agriculture (ICFA)",
+      duration: "Mar 2024 – May 2024",
       description:
-        "Contributed to a project on IoT-based crop monitoring systems. Developed and tested sensors for soil moisture and nutrient levels, leading to a 15% increase in data accuracy. Collaborated with a team of engineers and agronomists to analyze data and provide actionable insights to farmers.",
-      icon: Briefcase,
-    },
-    {
-      role: "Farm Operations Assistant",
-      company: "Greenfield Farms",
-      duration: "May 2022 - Aug 2022",
-      description:
-        "Assisted in daily farm operations, including planting, irrigation management, and harvesting. Gained hands-on experience with modern farming equipment and precision agriculture techniques, which helped in reducing water consumption by 10%.",
+        "Conducted research on agricultural subsidy programs and related government policies. Developed understanding of food and agriculture sector frameworks. Gained experience in report writing and virtual teamwork.",
       icon: Briefcase,
     },
   ],
   education: [
     {
-      degree: "Bachelor of Science in Agricultural Engineering",
-      institution: "National Institute of Agricultural Sciences",
-      duration: "2020 - 2024",
+      degree: "Bachelor of Science (Hons) in Agriculture",
+      institution: "Bundelkhand University, Jhansi",
+      duration: "Aug 2022 – Aug 2026",
       description:
-        "Specialized in Precision Agriculture and Farm Machinery. Final year project focused on developing a low-cost drone for crop health monitoring using multispectral imaging.",
+        "Engaged in experiential learning programs and agricultural extension activities. Active participant in NSS camp and field-based learning.",
+      icon: GraduationCap,
+    },
+    {
+      degree: "12th in Agriculture Science",
+      institution: "Ramsurat Malati Intermediate College, Mirzapur",
+      duration: "Apr 2020 – Mar 2022",
+      description:
+        "U.P. State Board — Percentage: 74.7%. Specialized in agricultural subjects during higher secondary education.",
+      icon: GraduationCap,
+    },
+    {
+      degree: "10th in Science",
+      institution: "Jansewa Intermediate College, Sonbhadra",
+      duration: "Apr 2018 – Mar 2020",
+      description:
+        "U.P. State Board — Percentage: 77%. Developed a strong foundation in science and computer studies.",
       icon: GraduationCap,
     },
   ],
-  skills: [
-    { name: "Precision Agriculture", icon: Crop },
-    { name: "IoT & Sensor Networks", icon: Bot },
-    { name: "Data Analysis (Python, R)", icon: BarChart },
-    { name: "Cloud Platforms (AWS, Azure)", icon: Cloud },
-    { name: "Machine Learning Concepts", icon: Lightbulb },
-    { name: "Agronomy", icon: Crop },
-  ],
+  skills: {
+    technical: [
+      { name: "Microsoft Office Suite", icon: Cpu },
+      { name: "Computer Concepts (CCC)", icon: Cpu },
+      { name: "Digital Marketing Basics", icon: Cpu },
+    ],
+    soft: [
+      { name: "Effective Communication", icon: Users },
+      { name: "Team Collaboration", icon: Users },
+      { name: "Leadership", icon: Users },
+      { name: "Work Ethic & Time Management", icon: Users },
+    ],
+  },
   certifications: [
     {
-      name: "Certified Crop Advisor (CCA)",
-      issuer: "American Society of Agronomy",
-      year: "2023",
+      name: "Course on Computer Concepts (CCC)",
+      issuer: "NIELIT",
+      year: "",
       icon: Award,
     },
     {
-      name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      year: "2023",
+      name: "Fundamentals of Digital Marketing",
+      issuer: "Google Digital Garage",
+      year: "",
+      icon: Award,
+    },
+    {
+      name: "Agriculture 4.0: The Future of Farming Technology",
+      issuer: "Just Agriculture Magazine",
+      year: "",
       icon: Award,
     },
   ],
@@ -97,6 +117,16 @@ export const portfolioData = {
       tags: ["Machine Learning", "TensorFlow", "Android"],
       icon: Rocket,
     },
+  ],
+  languages: [
+    { name: "Hindi", proficiency: "Fluent", icon: Languages },
+    { name: "English", proficiency: "Proficient", icon: Languages },
+    { name: "Bhojpuri", proficiency: "Native", icon: Languages },
+  ],
+  interests: [
+    { name: "Travel (Domestic & International)", icon: Heart },
+    { name: "Video Games", icon: Heart },
+    { name: "Skydiving", icon: Heart },
   ],
 };
 export const navLinks = [

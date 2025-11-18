@@ -54,9 +54,9 @@ export function PortfolioHeader() {
             smooth={true}
             offset={-70}
             duration={500}
-            className="cursor-pointer text-xl md:text-2xl font-bold font-display text-portfolio-primary"
+            className="cursor-pointer text-2xl font-bold font-display text-portfolio-primary"
           >
-            Vishal Kumar Maurya
+            V.K.M.
           </Link>
           <nav className="hidden md:flex items-center space-x-8">
             <NavLinksContent />

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 interface PortfolioSectionProps {
   id: string;
   title: string;
@@ -12,7 +12,7 @@ export function PortfolioSection({
   children,
   className = "",
 }: PortfolioSectionProps) {
-  const sectionVariants: Variants = {
+  const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,

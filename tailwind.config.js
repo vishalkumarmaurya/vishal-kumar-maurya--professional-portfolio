@@ -91,6 +91,11 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+        portfolio: {
+          background: 'hsl(210 40% 98%)',
+          primary: 'hsl(222 47% 11%)',
+          muted: 'hsl(215 20% 65%)',
+        },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			muted: {

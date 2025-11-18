@@ -1,148 +1,172 @@
-// Home page of the app, Currently a demo page for demonstration.
-// Please rewrite this file to implement your own logic. Do not replace or delete it, simply rewrite this HomePage.tsx file.
-import { useEffect } from 'react'
-import { Sparkles } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { ThemeToggle } from '@/components/ThemeToggle'
-import { Toaster, toast } from '@/components/ui/sonner'
-import { create } from 'zustand'
-import { useShallow } from 'zustand/react/shallow'
-import { AppLayout } from '@/components/layout/AppLayout'
-
-// Timer store: independent slice with a clear, minimal API, for demonstration
-type TimerState = {
-  isRunning: boolean;
-  elapsedMs: number;
-  start: () => void;
-  pause: () => void;
-  reset: () => void;
-  tick: (deltaMs: number) => void;
-}
-
-const useTimerStore = create<TimerState>((set) => ({
-  isRunning: false,
-  elapsedMs: 0,
-  start: () => set({ isRunning: true }),
-  pause: () => set({ isRunning: false }),
-  reset: () => set({ elapsedMs: 0, isRunning: false }),
-  tick: (deltaMs) => set((s) => ({ elapsedMs: s.elapsedMs + deltaMs })),
-}))
-
-// Counter store: separate slice to showcase multiple stores without coupling
-type CounterState = {
-  count: number;
-  inc: () => void;
-  reset: () => void;
-}
-
-const useCounterStore = create<CounterState>((set) => ({
-  count: 0,
-  inc: () => set((s) => ({ count: s.count + 1 })),
-  reset: () => set({ count: 0 }),
-}))
-
-function formatDuration(ms: number): string {
-  const total = Math.max(0, Math.floor(ms / 1000))
-  const m = Math.floor(total / 60)
-  const s = total % 60
-  return `${m}:${s.toString().padStart(2, '0')}`
-}
-
+import React from "react";
+import { PortfolioHeader } from "@/components/PortfolioHeader";
+import { PortfolioSection } from "@/components/PortfolioSection";
+import { portfolioData } from "@/lib/data";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Mail } from "lucide-react";
 export function HomePage() {
-  // Select only what is needed to avoid unnecessary re-renders
-  const { isRunning, elapsedMs } = useTimerStore(
-    useShallow((s) => ({ isRunning: s.isRunning, elapsedMs: s.elapsedMs })),
-  )
-  const start = useTimerStore((s) => s.start)
-  const pause = useTimerStore((s) => s.pause)
-  const resetTimer = useTimerStore((s) => s.reset)
-  const count = useCounterStore((s) => s.count)
-  const inc = useCounterStore((s) => s.inc)
-  const resetCount = useCounterStore((s) => s.reset)
-
-  // Drive the timer only while running; avoid update-depth issues with a scoped RAF
-  useEffect(() => {
-    if (!isRunning) return
-    let raf = 0
-    let last = performance.now()
-    const loop = () => {
-      const now = performance.now()
-      const delta = now - last
-      last = now
-      // Read store API directly to keep effect deps minimal and stable
-      useTimerStore.getState().tick(delta)
-      raf = requestAnimationFrame(loop)
-    }
-    raf = requestAnimationFrame(loop)
-    return () => cancelAnimationFrame(raf)
-  }, [isRunning])
-
-  const onPleaseWait = () => {
-    inc()
-    if (!isRunning) {
-      start()
-      toast.success('Building your app…', {
-        description: 'Hang tight, we\'re setting everything up.',
-      })
-    } else {
-      pause()
-      toast.info('Taking a short pause', {
-        description: 'We\'ll continue shortly.',
-      })
-    }
-  }
-
-  const formatted = formatDuration(elapsedMs)
-
+  const {
+    name,
+    title,
+    about,
+    contact,
+    workExperience,
+    education,
+    skills,
+    certifications,
+    projects,
+  } = portfolioData;
   return (
-    <AppLayout>
-      <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground p-4 overflow-hidden relative">
-        <ThemeToggle />
-        <div className="absolute inset-0 bg-gradient-rainbow opacity-10 dark:opacity-20 pointer-events-none" />
-        <div className="text-center space-y-8 relative z-10 animate-fade-in">
-          <div className="flex justify-center">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-primary floating">
-              <Sparkles className="w-8 h-8 text-white rotating" />
+    <div className="bg-portfolio-background font-sans text-portfolio-muted">
+      <PortfolioHeader />
+      <main>
+        {/* Hero Section */}
+        <section
+          id="hero"
+          className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-indigo-100"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-5xl md:text-7xl font-bold font-display text-portfolio-primary animate-fade-in">
+              {name}
+            </h1>
+            <p className="mt-4 text-xl md:text-2xl text-portfolio-primary/80 animate-fade-in animation-delay-300">
+              {title}
+            </p>
+            <div className="mt-8 flex justify-center gap-4 animate-fade-in animation-delay-600">
+              <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <a href={`mailto:${contact.email}`}>Contact Me</a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <a href="/resume.pdf" download>Download CV</a>
+              </Button>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-balance leading-tight">
-            Creating your <span className="text-gradient">app</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto text-pretty">
-            Your application would be ready soon.
+        </section>
+        {/* About Section */}
+        <PortfolioSection id="about" title="About Me">
+          <p className="max-w-3xl mx-auto text-center text-lg md:text-xl leading-relaxed text-gray-700">
+            {about}
           </p>
-          <div className="flex justify-center gap-4">
-            <Button 
-              size="lg"
-              onClick={onPleaseWait}
-              className="btn-gradient px-8 py-4 text-lg font-semibold hover:-translate-y-0.5 transition-all duration-200"
-              aria-live="polite"
-            >
-              Please Wait
-            </Button>
+        </PortfolioSection>
+        {/* Work Experience Section */}
+        <PortfolioSection id="experience" title="Work Experience">
+          <div className="max-w-3xl mx-auto space-y-8">
+            {workExperience.map((job, index) => (
+              <Card key={index} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-xl font-semibold text-portfolio-primary">{job.role}</CardTitle>
+                      <p className="text-lg text-portfolio-primary/90">{job.company}</p>
+                    </div>
+                    <p className="text-sm text-portfolio-muted font-medium">{job.duration}</p>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">{job.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-          <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-            <div>
-              Time elapsed: <span className="font-medium tabular-nums text-foreground">{formatted}</span>
+        </PortfolioSection>
+        {/* Education Section */}
+        <PortfolioSection id="education" title="Education">
+          <div className="max-w-3xl mx-auto">
+            {education.map((edu, index) => (
+              <Card key={index} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="text-xl font-semibold text-portfolio-primary">{edu.degree}</CardTitle>
+                      <p className="text-lg text-portfolio-primary/90">{edu.institution}</p>
+                    </div>
+                    <p className="text-sm text-portfolio-muted font-medium">{edu.duration}</p>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">{edu.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </PortfolioSection>
+        {/* Skills Section */}
+        <PortfolioSection id="skills" title="Skills">
+          <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+            {skills.map((skill) => (
+              <Badge key={skill.name} variant="secondary" className="text-lg px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
+                <skill.icon className="w-5 h-5 mr-2" />
+                {skill.name}
+              </Badge>
+            ))}
+          </div>
+        </PortfolioSection>
+        {/* Projects Section */}
+        <PortfolioSection id="projects" title="Projects">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <CardHeader>
+                  <CardTitle className="text-xl font-semibold text-portfolio-primary flex items-center">
+                    <project.icon className="w-6 h-6 mr-3 text-blue-800" />
+                    {project.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-gray-700 mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map(tag => <Badge key={tag} variant="outline">{tag}</Badge>)}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </PortfolioSection>
+        {/* Certifications Section */}
+        <PortfolioSection id="certifications" title="Certifications">
+          <div className="max-w-3xl mx-auto space-y-4">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="p-4 transition-all duration-300 hover:shadow-lg">
+                <div className="flex items-center">
+                  <cert.icon className="w-8 h-8 mr-4 text-blue-800" />
+                  <div>
+                    <p className="font-semibold text-portfolio-primary">{cert.name}</p>
+                    <p className="text-sm text-portfolio-muted">{cert.issuer} - {cert.year}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </PortfolioSection>
+        {/* Contact Section */}
+        <PortfolioSection id="contact" title="Get In Touch">
+          <div className="max-w-xl mx-auto text-center">
+            <p className="text-lg text-gray-700 mb-8">
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team.
+            </p>
+            <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <a href={`mailto:${contact.email}`} className="flex items-center">
+                <Mail className="w-5 h-5 mr-2" /> Say Hello
+              </a>
+            </Button>
+            <div className="flex justify-center gap-6 mt-8">
+              {contact.social.map(social => (
+                <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-800 transition-colors">
+                  <social.icon className="w-8 h-8" />
+                </a>
+              ))}
             </div>
-            <div>
-              Coins: <span className="font-medium tabular-nums text-foreground">{count}</span>
-            </div>
           </div>
-          <div className="flex justify-center gap-2">
-            <Button variant="outline" size="sm" onClick={() => { resetTimer(); resetCount(); toast('Reset complete') }}>
-              Reset
-            </Button>
-            <Button variant="outline" size="sm" onClick={() => { inc(); toast('Coin added') }}>
-              Add Coin
-            </Button>
-          </div>
+        </PortfolioSection>
+      </main>
+      <footer className="bg-gray-100 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+          <p>&copy; {new Date().getFullYear()} {name}. All Rights Reserved.</p>
+          <p className="mt-2 text-sm">Built with ���️ at Cloudflare</p>
         </div>
-        <footer className="absolute bottom-8 text-center text-muted-foreground/80">
-          <p>Powered by Cloudflare</p>
-        </footer>
-        <Toaster richColors closeButton />
-      </div>
-    </AppLayout>
-  )
+      </footer>
+    </div>
+  );
 }

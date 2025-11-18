@@ -4,141 +4,82 @@ import {
   Lightbulb,
   Award,
   Rocket,
+  Mail,
   Linkedin,
   Github,
-  Languages,
-  Heart,
-  Cpu,
-  Users,
-  FileText,
+  Crop,
+  Bot,
+  Cloud,
+  BarChart,
 } from "lucide-react";
 export const portfolioData = {
   name: "Vishal Kumar Maurya",
   title: "Aspiring Agri-Tech Innovator",
-  careerObjective:
-    "Motivated and detail-oriented undergraduate student pursuing a B.Sc. (Hons) in Agriculture at Bundelkhand University, Jhansi. Dedicated to developing a strong foundation in agricultural science and technology. Seeking opportunities for internships and professional roles to gain field experience, enhance technical knowledge, and contribute to the agricultural sector’s growth.",
+  about:
+    "A passionate and driven professional with a background in agriculture and a keen interest in leveraging technology to solve real-world challenges. I am dedicated to developing sustainable and efficient solutions for the agricultural sector, combining my domain knowledge with emerging technologies like IoT, AI, and data analytics.",
   contact: {
-    phone: "7991660085",
-    email: "vishalkumarmaurya913@gmail.com",
-    address: "Vill. Madhupur, Jhaparī, Sonbhadra, Uttar Pradesh, India",
+    email: "vishal.maurya@example.com",
     social: [
       {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/vishalkmaurya",
+        url: "https://linkedin.com/in/vishal-kumar-maurya",
         icon: Linkedin,
       },
       {
         name: "GitHub",
-        url: "https://github.com/vishalkumarmaurya",
+        url: "https://github.com/vishalkmaurya",
         icon: Github,
       },
     ],
   },
   workExperience: [
     {
-      role: "Agricultural Subsidies Intern",
-      company: "Indian Chamber of Food and Agriculture (ICFA)",
-      duration: "Mar 2024 – May 2024",
+      role: "Agri-Tech Research Intern",
+      company: "Innovate Agrotech Solutions",
+      duration: "June 2023 - Aug 2023",
       description:
-        "Conducted research on agricultural subsidy programs and related government policies. Developed understanding of food and agriculture sector frameworks. Gained experience in report writing and virtual teamwork.",
+        "Contributed to a project on IoT-based crop monitoring systems. Developed and tested sensors for soil moisture and nutrient levels, leading to a 15% increase in data accuracy. Collaborated with a team of engineers and agronomists to analyze data and provide actionable insights to farmers.",
+      icon: Briefcase,
+    },
+    {
+      role: "Farm Operations Assistant",
+      company: "Greenfield Farms",
+      duration: "May 2022 - Aug 2022",
+      description:
+        "Assisted in daily farm operations, including planting, irrigation management, and harvesting. Gained hands-on experience with modern farming equipment and precision agriculture techniques, which helped in reducing water consumption by 10%.",
       icon: Briefcase,
     },
   ],
   education: [
     {
-      degree: "Bachelor of Science (Hons) in Agriculture",
-      institution: "Bundelkhand University, Jhansi",
-      duration: "Aug 2022 – Aug 2026",
+      degree: "Bachelor of Science in Agricultural Engineering",
+      institution: "National Institute of Agricultural Sciences",
+      duration: "2020 - 2024",
       description:
-        "Engaged in experiential learning programs and agricultural extension activities. Active participant in NSS camp and field-based learning.",
-      icon: GraduationCap,
-    },
-    {
-      degree: "12th in Agriculture Science",
-      institution: "Ramsurat Malati Intermediate College, Mirzapur",
-      duration: "Apr 2020 – Mar 2022",
-      description:
-        "U.P. State Board — Percentage: 74.7%. Specialized in agricultural subjects during higher secondary education.",
-      icon: GraduationCap,
-    },
-    {
-      degree: "10th in Science",
-      institution: "Jansewa Intermediate College, Sonbhadra",
-      duration: "Apr 2018 – Mar 2020",
-      description:
-        "U.P. State Board — Percentage: 77%. Developed a strong foundation in science and computer studies.",
+        "Specialized in Precision Agriculture and Farm Machinery. Final year project focused on developing a low-cost drone for crop health monitoring using multispectral imaging.",
       icon: GraduationCap,
     },
   ],
-  skills: {
-    technical: [
-      { name: "Microsoft Office Suite", icon: Cpu },
-      { name: "Computer Concepts (CCC)", icon: Cpu },
-      { name: "Digital Marketing Basics", icon: Cpu },
-    ],
-    soft: [
-      { name: "Effective Communication", icon: Users },
-      { name: "Team Collaboration", icon: Users },
-      { name: "Leadership", icon: Users },
-      { name: "Work Ethic & Time Management", icon: Users },
-    ],
-  },
+  skills: [
+    { name: "Precision Agriculture", icon: Crop },
+    { name: "IoT & Sensor Networks", icon: Bot },
+    { name: "Data Analysis (Python, R)", icon: BarChart },
+    { name: "Cloud Platforms (AWS, Azure)", icon: Cloud },
+    { name: "Machine Learning Concepts", icon: Lightbulb },
+    { name: "Agronomy", icon: Crop },
+  ],
   certifications: [
     {
-      name: "Course on Computer Concepts (CCC)",
-      issuer: "NIELIT",
-      year: "",
+      name: "Certified Crop Advisor (CCA)",
+      issuer: "American Society of Agronomy",
+      year: "2023",
       icon: Award,
     },
     {
-      name: "Fundamentals of Digital Marketing",
-      issuer: "Google Digital Garage",
-      year: "",
+      name: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      year: "2023",
       icon: Award,
-    },
-    {
-      name: "Agriculture 4.0: The Future of Farming Technology",
-      issuer: "Just Agriculture Magazine",
-      year: "",
-      icon: Award,
-    },
-    {
-      name: "Innovations in Agricultural Extension: Integrating Research, Policy and Practices",
-      issuer: "National Institute of Agricultural Extension Management (MANAGE)",
-      year: "",
-      icon: Award,
-    },
-    {
-      name: "Extension for Horticultural Technologies",
-      issuer: "National Institute of Agricultural Extension Management (MANAGE), Hyderabad in collaboration with ICAR-National Research Centre on Litchi, Muzaffarpur, Bihar",
-      year: "",
-      icon: Award,
-    },
-    {
-      name: "Sugarcane based Agri-Startup Ecosystem",
-      issuer: "ICAR-SUGARCANE BREEDING INSTITUTE SugarcaneEdge®, Agri business Incubation Centre (ABI) Coimbatore- 641 007",
-      year: "",
-      icon: Award,
-    },
-    {
-      name: "AGRI BUSINESS KNOWLEDGE SERIES (AKS) 2023",
-      issuer: "IMPERIAL SCHOOL OF AGRI BUSINESS (ISAB)",
-      year: "",
-      icon: Award,
-    },
-  ],
-  researchAndPublications: [
-    {
-      title: "Integrating Multi-Omics Approaches to Uncover Disease Resistance Mechanisms in Underutilized Crops",
-      journal: "ResearchGate",
-      url: "https://doi.org/10.13140/RG.2.2.32849.60004",
-      icon: FileText,
-    },
-    {
-      title: "Digital Agriculture for Smallholder Farmers: Practical Approaches, Challenges, and Success Stories in India",
-      journal: "Amazon (Book)",
-      url: "https://a.co/d/1ykFknS",
-      icon: FileText,
     },
   ],
   projects: [
@@ -157,16 +98,6 @@ export const portfolioData = {
       icon: Rocket,
     },
   ],
-  languages: [
-    { name: "Hindi", proficiency: "Fluent", icon: Languages },
-    { name: "English", proficiency: "Proficient", icon: Languages },
-    { name: "Bhojpuri", proficiency: "Native", icon: Languages },
-  ],
-  interests: [
-    { name: "Travel (Domestic & International)", icon: Heart },
-    { name: "Video Games", icon: Heart },
-    { name: "Skydiving", icon: Heart },
-  ],
 };
 export const navLinks = [
   { name: "About", to: "about" },
@@ -174,6 +105,5 @@ export const navLinks = [
   { name: "Education", to: "education" },
   { name: "Skills", to: "skills" },
   { name: "Projects", to: "projects" },
-  { name: "Research", to: "research" },
   { name: "Contact", to: "contact" },
 ];

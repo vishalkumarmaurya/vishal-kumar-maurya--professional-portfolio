@@ -10,6 +10,7 @@ import {
   Heart,
   Cpu,
   Users,
+  FileText,
 } from "lucide-react";
 export const portfolioData = {
   name: "Vishal Kumar Maurya",
@@ -102,6 +103,14 @@ export const portfolioData = {
       icon: Award,
     },
   ],
+  researchAndPublications: [
+    {
+      title: "Impact of Climate-Resilient Agricultural Practices on Crop Yield in Arid Regions",
+      journal: "Journal of Sustainable Agriculture, 2025 (Upcoming)",
+      url: "#",
+      icon: FileText,
+    },
+  ],
   projects: [
     {
       name: "Smart Irrigation System",
@@ -135,5 +144,6 @@ export const navLinks = [
   { name: "Education", to: "education" },
   { name: "Skills", to: "skills" },
   { name: "Projects", to: "projects" },
+  { name: "Research", to: "research" },
   { name: "Contact", to: "contact" },
 ];

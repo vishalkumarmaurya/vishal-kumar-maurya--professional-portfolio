@@ -31,10 +31,10 @@ export function HomePage() {
             <h1 className="text-5xl md:text-7xl font-bold font-display text-portfolio-primary animate-fade-in">
               {name}
             </h1>
-            <p className="mt-4 text-xl md:text-2xl text-portfolio-primary/80 animate-fade-in animation-delay-300">
+            <p className="mt-4 text-xl md:text-2xl text-portfolio-primary/80 animate-fade-in [animation-delay:300ms]">
               {title}
             </p>
-            <div className="mt-8 flex justify-center gap-4 animate-fade-in animation-delay-600">
+            <div className="mt-8 flex justify-center gap-4 animate-fade-in [animation-delay:600ms]">
               <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                 <a href={`mailto:${contact.email}`}>Contact Me</a>
               </Button>

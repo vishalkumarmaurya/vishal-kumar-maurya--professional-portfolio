@@ -10,13 +10,15 @@ export function HomePage() {
   const {
     name,
     title,
-    about,
+    careerObjective,
     contact,
     workExperience,
     education,
     skills,
     certifications,
     projects,
+    languages,
+    interests,
   } = portfolioData;
   return (
     <div className="bg-portfolio-background font-sans text-portfolio-muted">
@@ -45,9 +47,9 @@ export function HomePage() {
           </div>
         </section>
         {/* About Section */}
-        <PortfolioSection id="about" title="About Me">
+        <PortfolioSection id="about" title="Career Objective">
           <p className="max-w-3xl mx-auto text-center text-lg md:text-xl leading-relaxed text-gray-700">
-            {about}
+            {careerObjective}
           </p>
         </PortfolioSection>
         {/* Work Experience Section */}
@@ -56,12 +58,12 @@ export function HomePage() {
             {workExperience.map((job, index) => (
               <Card key={index} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <CardHeader>
-                  <div className="flex justify-between items-start">
+                  <div className="flex justify-between items-start flex-col sm:flex-row sm:items-center">
                     <div>
                       <CardTitle className="text-xl font-semibold text-portfolio-primary">{job.role}</CardTitle>
                       <p className="text-lg text-portfolio-primary/90">{job.company}</p>
                     </div>
-                    <p className="text-sm text-portfolio-muted font-medium">{job.duration}</p>
+                    <p className="text-sm text-portfolio-muted font-medium mt-2 sm:mt-0">{job.duration}</p>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -73,16 +75,16 @@ export function HomePage() {
         </PortfolioSection>
         {/* Education Section */}
         <PortfolioSection id="education" title="Education">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto space-y-8">
             {education.map((edu, index) => (
               <Card key={index} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <CardHeader>
-                  <div className="flex justify-between items-start">
+                  <div className="flex justify-between items-start flex-col sm:flex-row sm:items-center">
                     <div>
                       <CardTitle className="text-xl font-semibold text-portfolio-primary">{edu.degree}</CardTitle>
                       <p className="text-lg text-portfolio-primary/90">{edu.institution}</p>
                     </div>
-                    <p className="text-sm text-portfolio-muted font-medium">{edu.duration}</p>
+                    <p className="text-sm text-portfolio-muted font-medium mt-2 sm:mt-0">{edu.duration}</p>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -94,13 +96,29 @@ export function HomePage() {
         </PortfolioSection>
         {/* Skills Section */}
         <PortfolioSection id="skills" title="Skills">
-          <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
-            {skills.map((skill) => (
-              <Badge key={skill.name} variant="secondary" className="text-lg px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
-                <skill.icon className="w-5 h-5 mr-2" />
-                {skill.name}
-              </Badge>
-            ))}
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Technical Skills</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                {skills.technical.map((skill) => (
+                  <Badge key={skill.name} variant="secondary" className="text-lg px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
+                    <skill.icon className="w-5 h-5 mr-2" />
+                    {skill.name}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Soft Skills</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                {skills.soft.map((skill) => (
+                  <Badge key={skill.name} variant="secondary" className="text-lg px-4 py-2 bg-green-100 text-green-800 hover:bg-green-200 transition-colors">
+                    <skill.icon className="w-5 h-5 mr-2" />
+                    {skill.name}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           </div>
         </PortfolioSection>
         {/* Projects Section */}
@@ -133,11 +151,42 @@ export function HomePage() {
                   <cert.icon className="w-8 h-8 mr-4 text-blue-800" />
                   <div>
                     <p className="font-semibold text-portfolio-primary">{cert.name}</p>
-                    <p className="text-sm text-portfolio-muted">{cert.issuer} - {cert.year}</p>
+                    <p className="text-sm text-portfolio-muted">{cert.issuer}{cert.year && ` - ${cert.year}`}</p>
                   </div>
                 </div>
               </Card>
             ))}
+          </div>
+        </PortfolioSection>
+        {/* Languages & Interests Section */}
+        <PortfolioSection id="languages-interests" title="Languages & Interests">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Languages</h3>
+              <div className="space-y-4">
+                {languages.map((lang) => (
+                  <Card key={lang.name} className="p-3">
+                    <div className="flex items-center">
+                      <lang.icon className="w-6 h-6 mr-3 text-blue-800" />
+                      <p className="font-medium text-portfolio-primary">{lang.name} <span className="text-sm text-portfolio-muted">({lang.proficiency})</span></p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Interests</h3>
+              <div className="space-y-4">
+                {interests.map((interest) => (
+                  <Card key={interest.name} className="p-3">
+                    <div className="flex items-center">
+                      <interest.icon className="w-6 h-6 mr-3 text-pink-500" />
+                      <p className="font-medium text-portfolio-primary">{interest.name}</p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </PortfolioSection>
         {/* Contact Section */}
@@ -164,7 +213,9 @@ export function HomePage() {
       <footer className="bg-gray-100 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
           <p>&copy; {new Date().getFullYear()} {name}. All Rights Reserved.</p>
-          <p className="mt-2 text-sm">Built with ���️ at Cloudflare</p>
+          <p className="mt-2 text-sm">{contact.email} | {contact.phone}</p>
+          <p className="mt-2 text-sm">{contact.address}</p>
+          <p className="mt-4 text-sm">Built with ❤️ at Cloudflare</p>
         </div>
       </footer>
     </div>

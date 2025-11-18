@@ -29,7 +29,7 @@ export const portfolioData = {
       },
       {
         name: "GitHub",
-        url: "https://github.com/vishalkmaurya",
+        url: "https://github.com/vishalkumarmaurya",
         icon: Github,
       },
     ],

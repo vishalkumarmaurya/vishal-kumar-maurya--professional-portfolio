@@ -110,6 +110,12 @@ export const portfolioData = {
       url: "https://doi.org/10.13140/RG.2.2.32849.60004",
       icon: FileText,
     },
+    {
+      title: "Digital Agriculture for Smallholder Farmers: Practical Approaches, Challenges, and Success Stories in India",
+      journal: "Amazon (Book)",
+      url: "https://a.co/d/1ykFknS",
+      icon: FileText,
+    },
   ],
   projects: [
     {

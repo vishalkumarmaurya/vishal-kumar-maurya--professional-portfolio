@@ -120,6 +120,12 @@ export const portfolioData = {
       year: "",
       icon: Award,
     },
+    {
+      name: "AGRI BUSINESS KNOWLEDGE SERIES (AKS) 2023",
+      issuer: "IMPERIAL SCHOOL OF AGRI BUSINESS (ISAB)",
+      year: "",
+      icon: Award,
+    },
   ],
   researchAndPublications: [
     {

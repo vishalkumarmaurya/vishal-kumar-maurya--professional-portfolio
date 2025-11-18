@@ -114,6 +114,12 @@ export const portfolioData = {
       year: "",
       icon: Award,
     },
+    {
+      name: "Sugarcane based Agri-Startup Ecosystem",
+      issuer: "ICAR-SUGARCANE BREEDING INSTITUTE SugarcaneEdge®, Agri business Incubation Centre (ABI) Coimbatore- 641 007",
+      year: "",
+      icon: Award,
+    },
   ],
   researchAndPublications: [
     {

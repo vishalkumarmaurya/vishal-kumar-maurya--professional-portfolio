@@ -13,7 +13,6 @@ export function CVPage() {
     education,
     skills,
     certifications,
-    researchAndPublications,
     languages,
     interests,
   } = portfolioData;
@@ -110,16 +109,6 @@ export function CVPage() {
               {certifications.map((cert, index) => (
                 <li key={index}>
                   <span className="font-semibold text-gray-800">{cert.name}</span> - {cert.issuer}
-                </li>
-              ))}
-            </ul>
-          </section>
-          <section className="mt-8">
-            <h2 className="text-2xl font-semibold text-gray-800 border-b border-gray-200 pb-2 mb-4">Research and Publication</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
-              {researchAndPublications.map((pub, index) => (
-                <li key={index}>
-                  <span className="font-semibold text-gray-800">{pub.title}</span> - <span className="italic">{pub.journal}</span>
                 </li>
               ))}
             </ul>

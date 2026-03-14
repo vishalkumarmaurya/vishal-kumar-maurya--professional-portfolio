@@ -6,7 +6,7 @@ import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Link as LinkIcon, FileText, Cpu, Users, Phone, MapPin } from "lucide-react";
+import { Mail, Link as LinkIcon, FileText, Cpu, Users, Phone, MapPin, Languages, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {
   const {
@@ -19,6 +19,8 @@ export function HomePage() {
     skills,
     certifications,
     researchAndPublications,
+    languages,
+    interests,
   } = portfolioData;
   return (
     <div className="bg-portfolio-background font-sans text-portfolio-primary selection:bg-blue-100">
@@ -105,7 +107,6 @@ export function HomePage() {
               <div key={index} className="relative pl-8 border-l-2 border-blue-100 py-4 last:pb-0">
                 <div className="absolute left-[-9px] top-6 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm" />
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                  {/* Swap display hierarchy: Institution (College) first, then Degree */}
                   <h3 className="text-xl font-bold text-slate-900">{edu.institution}</h3>
                   <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">{edu.duration}</span>
                 </div>
@@ -189,6 +190,52 @@ export function HomePage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </PortfolioSection>
+        {/* Languages & Interests Section */}
+        <PortfolioSection id="personal" title="Languages & Interests" className="bg-white">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-none shadow-soft overflow-hidden">
+              <div className="bg-indigo-600 px-6 py-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Languages className="w-5 h-5" /> Languages
+                </h3>
+              </div>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  {languages.map((lang) => (
+                    <div key={lang.name} className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-indigo-50 rounded-full">
+                          <lang.icon className="w-4 h-4 text-indigo-600" />
+                        </div>
+                        <span className="font-bold text-slate-900">{lang.name}</span>
+                      </div>
+                      <Badge variant="outline" className="text-indigo-700 border-indigo-200">
+                        {lang.proficiency}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-none shadow-soft overflow-hidden">
+              <div className="bg-rose-500 px-6 py-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Heart className="w-5 h-5" /> Interests
+                </h3>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex flex-wrap gap-4">
+                  {interests.map((interest) => (
+                    <div key={interest.name} className="flex items-center gap-3 bg-rose-50 px-4 py-2 rounded-full border border-rose-100">
+                      <interest.icon className="w-4 h-4 text-rose-500" />
+                      <span className="text-sm font-bold text-rose-900">{interest.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </PortfolioSection>
         {/* Contact Section */}

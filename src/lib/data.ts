@@ -108,6 +108,7 @@ export const portfolioData = {
       name: "Fundamentals of Digital Marketing",
       issuer: "Google Digital Garage",
       year: "",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_google-certified-digital-marketing-activity-7003393067940495361-dd9q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
       icon: Award,
     },
     {

@@ -17,7 +17,9 @@ import {
   Heart,
   ArrowRight,
   ExternalLink,
-  FileText
+  FileText,
+  Linkedin,
+  Github
 } from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {

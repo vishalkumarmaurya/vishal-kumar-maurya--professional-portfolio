@@ -16,7 +16,7 @@ export const portfolioData = {
   careerObjective:
     "Motivated and detail-oriented undergraduate student pursuing a B.Sc. (Hons) in Agriculture at Bundelkhand University, Jhansi (Expected Graduation: Aug 2026). Dedicated to developing a strong foundation in agricultural science and technology. Seeking opportunities for internships and professional roles to gain field experience, enhance technical knowledge, and contribute to the agricultural sector’s growth.",
   contact: {
-    phone: "7991660085",
+    phone: "+91 7991660085",
     email: "vishalkumarmaurya913@gmail.com",
     address: "Vill. Madhupur, Jhaparī, Sonbhadra, Uttar Pradesh, India",
     social: [
@@ -36,7 +36,7 @@ export const portfolioData = {
     {
       role: "Rural Agriculture / Awareness Work Experience",
       company: "Bundelkhand University Jhansi Institute of Agricultural Sciences",
-      duration: "Aug 2025 – Dec 2025 (6 months)",
+      duration: "Aug 2025 – Dec 2025",
       description:
         "Allotted to Village Deli Block Babina Jhansi (U.P). Conducted rural agriculture awareness programs with local farming communities. Shared modern agricultural practices, sustainable techniques, and government schemes. Gained practical field experience in community outreach, education, and agricultural extension services.",
       icon: Briefcase,
@@ -54,7 +54,7 @@ export const portfolioData = {
     {
       degree: "Bachelor of Science (Hons) in Agriculture",
       institution: "Bundelkhand University, Jhansi",
-      duration: "Aug 2022 – Aug 2026",
+      duration: "2022 – 2026 (Expected)",
       description:
         "Engaged in experiential learning programs and agricultural extension activities. Active participant in NSS camp and field-based learning.",
       icon: GraduationCap,
@@ -62,7 +62,7 @@ export const portfolioData = {
     {
       degree: "12th in Agriculture Science",
       institution: "Ramsurat Malati Intermediate College, Mirzapur",
-      duration: "Apr 2020 – Mar 2022",
+      duration: "2020 – 2022",
       description:
         "U.P. State Board — Percentage: 74.70%. Specialized in agricultural subjects during higher secondary education.",
       icon: GraduationCap,
@@ -70,7 +70,7 @@ export const portfolioData = {
     {
       degree: "10th in Science",
       institution: "Jansewa Intermediate College, Sonbhadra",
-      duration: "Apr 2018 – Mar 2020",
+      duration: "2018 – 2020",
       description:
         "U.P. State Board — Percentage: 77%. Developed a strong foundation in science and computer studies.",
       icon: GraduationCap,
@@ -81,6 +81,7 @@ export const portfolioData = {
       { name: "Microsoft Office Suite", icon: Cpu },
       { name: "Computer Concepts (CCC)", icon: Cpu },
       { name: "Digital Marketing Basics", icon: Cpu },
+      { name: "Agricultural Research", icon: Cpu },
     ],
     soft: [
       { name: "Effective Communication", icon: Users },
@@ -92,58 +93,58 @@ export const portfolioData = {
   certifications: [
     {
       name: "Fumigation of Agricultural Commodities",
-      issuer: "National Institute of Agricultural Extension Management (MANAGE)",
-      year: "",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-fumigation-manage-activity-7337734066114334720-a-0X?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      issuer: "MANAGE (National Institute of Agricultural Extension Management)",
+      year: "2024",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-fumigation-manage-activity-7337734066114334720-a-0X",
       icon: Award,
     },
     {
       name: "Course on Computer Concepts (CCC)",
       issuer: "NIELIT",
-      year: "",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_course-on-computer-concepts-activity-7438583220033458177-0KBJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      year: "2024",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_course-on-computer-concepts-activity-7438583220033458177-0KBJ",
       icon: Award,
     },
     {
       name: "Fundamentals of Digital Marketing",
       issuer: "Google Digital Garage",
-      year: "",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_google-certified-digital-marketing-activity-7003393067940495361-dd9q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      year: "2022",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_google-certified-digital-marketing-activity-7003393067940495361-dd9q",
       icon: Award,
     },
     {
       name: "Agriculture 4.0: The Future of Farming Technology",
       issuer: "Just Agriculture Magazine",
-      year: "",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agripreneurship-futureoffarming-activity-7054733364754268160-IfYI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      year: "2023",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agripreneurship-futureoffarming-activity-7054733364754268160-IfYI",
       icon: Award,
     },
     {
-      name: "Innovations in Agricultural Extension: Integrating Research, Policy and Practices",
-      issuer: "National Institute of Agricultural Extension Management (MANAGE)",
-      year: "",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agriculturalextension-innovation-activity-7366763048734257153-sU2m?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      name: "Innovations in Agricultural Extension",
+      issuer: "MANAGE",
+      year: "2024",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agriculturalextension-innovation-activity-7366763048734257153-sU2m",
       icon: Award,
     },
     {
       name: "Extension for Horticultural Technologies",
       issuer: "MANAGE & ICAR-NRCL",
-      year: "",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_horticulture-agriculture-extensiontraining-activity-7223693793529671680-bt2A?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      year: "2024",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_horticulture-agriculture-extensiontraining-activity-7223693793529671680-bt2A",
       icon: Award,
     },
     {
       name: "Sugarcane based Agri-Startup Ecosystem",
       issuer: "ICAR-SBI Coimbatore",
-      year: "",
+      year: "2025",
       url: "https://www.linkedin.com/posts/vishalkmaurya_agritech-sugarcaneecosystem-sustainability-activity-7295385007693471744-Vqke",
       icon: Award,
     },
     {
       name: "Agri Business Knowledge Series (AKS)",
       issuer: "ISAB",
-      year: "",
-      url: "https://www.linkedin.com/posts/vishalkmaurya_agribusiness-agriculture-isab-activity-7084884958292393985-doau?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      year: "2023",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agribusiness-agriculture-isab-activity-7084884958292393985-doau",
       icon: Award,
     },
   ],
@@ -162,14 +163,15 @@ export const portfolioData = {
     },
   ],
   languages: [
-    { name: "Hindi", proficiency: "Fluent", icon: Languages },
-    { name: "English", proficiency: "Proficient", icon: Languages },
+    { name: "Hindi", proficiency: "Native/Bilingual", icon: Languages },
+    { name: "English", proficiency: "Professional Working", icon: Languages },
     { name: "Bhojpuri", proficiency: "Native", icon: Languages },
   ],
   interests: [
-    { name: "Travel & Exploration", icon: Heart },
-    { name: "Gaming", icon: Heart },
-    { name: "Adventure Sports", icon: Heart },
+    { name: "Sustainable Farming", icon: Heart },
+    { name: "Tech Gadgets", icon: Heart },
+    { name: "Rural Development", icon: Heart },
+    { name: "Agriculture Extension", icon: Heart },
   ],
 };
 export const navLinks = [

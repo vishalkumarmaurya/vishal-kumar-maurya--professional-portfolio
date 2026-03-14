@@ -81,7 +81,7 @@ export function HomePage() {
         {/* About Section */}
         <PortfolioSection id="about" title="Career Objective" className="bg-white">
           <div className="max-w-3xl mx-auto">
-            <p className="text-center text-lg md:text-xl leading-relaxed text-slate-700 font-normal">
+            <p className="text-center text-lg md:text-xl leading-relaxed text-slate-700 font-normal whitespace-pre-line">
               {careerObjective}
             </p>
           </div>
@@ -123,7 +123,7 @@ export function HomePage() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-1">{edu.institution}</h3>
                 <p className="text-lg text-blue-700 font-semibold mb-1">{edu.degree}</p>
                 <p className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3">{edu.duration}</p>
-                <p className="text-slate-600 leading-relaxed max-w-2xl">{edu.description}</p>
+                <p className="text-slate-600 leading-relaxed max-w-2xl whitespace-pre-line">{edu.description}</p>
               </div>
             ))}
           </div>

@@ -75,7 +75,7 @@ export function CVPage() {
         <main className="space-y-10">
           <section className="print:break-inside-avoid">
             <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Career Objective</h2>
-            <p className="text-slate-700 leading-relaxed font-normal">{careerObjective}</p>
+            <p className="text-slate-700 leading-relaxed font-normal whitespace-pre-line">{careerObjective}</p>
           </section>
           <section>
             <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Work Experience</h2>
@@ -83,7 +83,7 @@ export function CVPage() {
               {workExperience.map((job, index) => (
                 <div key={index} className="print:break-inside-avoid">
                   <div className="flex justify-between items-start mb-1 gap-4">
-                    <h3 className="text-lg font-black text-slate-900 leading-tight">{job.company}</h3>
+                    <h3 className="text-lg font-black text-slate-900 leading-tight uppercase">{job.company}</h3>
                     <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{job.duration}</span>
                   </div>
                   <p className="text-md font-bold text-blue-700 mb-2">{job.role}</p>
@@ -98,11 +98,11 @@ export function CVPage() {
               {education.map((edu, index) => (
                 <div key={index} className="print:break-inside-avoid">
                   <div className="flex justify-between items-start mb-1 gap-4">
-                    <h3 className="text-lg font-black text-slate-900 leading-tight">{edu.institution}</h3>
+                    <h3 className="text-lg font-black text-slate-900 leading-tight uppercase">{edu.institution}</h3>
                     <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{edu.duration}</span>
                   </div>
                   <p className="text-md font-bold text-blue-700 mb-2">{edu.degree}</p>
-                  <p className="text-slate-600 leading-relaxed text-[13.5px]">{edu.description}</p>
+                  <p className="text-slate-600 leading-relaxed text-[13.5px] whitespace-pre-line">{edu.description}</p>
                 </div>
               ))}
             </div>
@@ -156,10 +156,10 @@ export function CVPage() {
               {researchAndPublications.map((pub, index) => (
                 <div key={index} className="text-sm">
                   <div className="flex items-start justify-between gap-4">
-                    <a 
-                      href={pub.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={pub.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="font-bold text-slate-900 hover:text-blue-700 leading-snug flex-1 transition-colors group flex items-start gap-2"
                     >
                       <span className="flex-1">{pub.title}</span>

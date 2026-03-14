@@ -123,7 +123,8 @@ export const portfolioData = {
     {
       name: "Sugarcane based Agri-Startup Ecosystem",
       issuer: "ICAR-SBI Coimbatore",
-      year: "2024",
+      year: "2025",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agritech-sugarcaneecosystem-sustainability-activity-7295385007693471744-Vqke",
       icon: Award,
     },
     {

@@ -135,9 +135,16 @@ export function CVPage() {
               {certifications.map((cert, index) => (
                 <div key={index} className="flex items-start gap-2 text-sm leading-tight">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0" />
-                  <p>
-                    <span className="font-bold text-slate-900">{cert.name}</span>
-                    <span className="text-slate-400 font-medium"> — {cert.issuer}</span>
+                  <p className="flex-1">
+                    {cert.url ? (
+                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition-colors inline-flex items-center gap-1 group">
+                        <span className="font-bold text-slate-900 group-hover:text-blue-700">{cert.name}</span>
+                        <ExternalLink size={10} className="text-slate-300 group-hover:text-blue-700 print:hidden" />
+                      </a>
+                    ) : (
+                      <span className="font-bold text-slate-900">{cert.name}</span>
+                    )}
+                    <span className="text-slate-400 font-medium"> — {cert.issuer} ({cert.year})</span>
                   </p>
                 </div>
               ))}
@@ -149,8 +156,10 @@ export function CVPage() {
               {researchAndPublications.map((pub, index) => (
                 <div key={index} className="text-sm">
                   <div className="flex items-start justify-between gap-4">
-                    <p className="font-bold text-slate-900 leading-snug flex-1">{pub.title}</p>
-                    <ExternalLink size={12} className="text-slate-300 mt-1 shrink-0 print:hidden" />
+                    <a href={pub.url} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-blue-700 leading-snug flex-1 transition-colors group flex items-center gap-2">
+                      {pub.title}
+                      <ExternalLink size={12} className="text-slate-300 group-hover:text-blue-700 mt-1 shrink-0 print:hidden" />
+                    </a>
                   </div>
                   <p className="text-slate-500 italic uppercase text-[10px] font-bold tracking-widest mt-1">{pub.journal}</p>
                 </div>

@@ -16,7 +16,8 @@ import {
   MapPin,
   Languages,
   Heart,
-  ArrowRight
+  ArrowRight,
+  ExternalLink
 } from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {
@@ -170,11 +171,33 @@ export function HomePage() {
             {certifications.map((cert, index) => (
               <Card key={index} className="group hover:border-blue-200 transition-colors shadow-none border border-slate-100 flex flex-col h-full">
                 <CardContent className="p-6 flex flex-col flex-1">
-                  <cert.icon className="w-8 h-8 text-blue-600 mb-4 group-hover:scale-110 transition-transform" />
+                  <div className="flex justify-between items-start mb-4">
+                    <cert.icon className="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform" />
+                    {cert.url && (
+                      <a 
+                        href={cert.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-blue-700 hover:text-blue-900 transition-colors"
+                        title="View Verification"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                   <p className="font-bold text-slate-900 mb-1 leading-tight flex-1">{cert.name}</p>
-                  <p className="text-xs font-semibold text-slate-500 mt-4 pt-4 border-t border-slate-50 italic">
-                    {cert.issuer} • {cert.year}
-                  </p>
+                  <div className="flex flex-col gap-1 mt-4 pt-4 border-t border-slate-50">
+                    <p className="text-xs font-semibold text-slate-500 italic">
+                      {cert.issuer} • {cert.year}
+                    </p>
+                    {cert.url && (
+                      <Button asChild variant="link" className="p-0 h-auto text-[10px] font-bold text-blue-700 justify-start hover:no-underline">
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                          Verify Credential <LinkIcon className="w-2.5 h-2.5" />
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}

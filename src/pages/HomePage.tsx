@@ -102,16 +102,14 @@ export function HomePage() {
         </PortfolioSection>
         {/* Education Section */}
         <PortfolioSection id="education" title="Academic Background" className="bg-white">
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-10">
             {education.map((edu, index) => (
-              <div key={index} className="relative pl-8 border-l-2 border-blue-100 py-4 last:pb-0">
+              <div key={index} className="relative pl-8 border-l-2 border-blue-100 py-2 last:pb-0">
                 <div className="absolute left-[-9px] top-6 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm" />
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                  <h3 className="text-xl font-bold text-slate-900">{edu.institution}</h3>
-                  <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">{edu.duration}</span>
-                </div>
-                <p className="text-lg text-blue-700 font-semibold mb-2">{edu.degree}</p>
-                <p className="text-slate-600 leading-relaxed">{edu.description}</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-1">{edu.institution}</h3>
+                <p className="text-lg text-blue-700 font-semibold mb-1">{edu.degree}</p>
+                <p className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-3">{edu.duration}</p>
+                <p className="text-slate-600 leading-relaxed max-w-2xl">{edu.description}</p>
               </div>
             ))}
           </div>

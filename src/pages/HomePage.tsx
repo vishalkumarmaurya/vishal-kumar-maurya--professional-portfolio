@@ -6,7 +6,7 @@ import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Link as LinkIcon, FileText } from "lucide-react";
+import { Mail, Link as LinkIcon, FileText, Cpu, Users } from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {
   const {
@@ -128,8 +128,8 @@ export function HomePage() {
               <CardContent className="p-6">
                 <div className="flex flex-wrap gap-3">
                   {skills.technical.map((skill) => (
-                    <Badge key={skill.name} variant="secondary" className="px-4 py-2 text-sm font-medium bg-blue-50 text-blue-800 border-none">
-                      {skill.name}
+                    <Badge key={skill.name} variant="secondary" className="px-4 py-2 text-sm font-medium bg-blue-50 text-blue-800 border-none flex items-center gap-1">
+                      <skill.icon className="w-3 h-3" />{skill.name}
                     </Badge>
                   ))}
                 </div>
@@ -144,8 +144,8 @@ export function HomePage() {
               <CardContent className="p-6">
                 <div className="flex flex-wrap gap-3">
                   {skills.soft.map((skill) => (
-                    <Badge key={skill.name} variant="secondary" className="px-4 py-2 text-sm font-medium bg-emerald-50 text-emerald-800 border-none">
-                      {skill.name}
+                    <Badge key={skill.name} variant="secondary" className="px-4 py-2 text-sm font-medium bg-emerald-50 text-emerald-800 border-none flex items-center gap-1">
+                      <skill.icon className="w-3 h-3" />{skill.name}
                     </Badge>
                   ))}
                 </div>

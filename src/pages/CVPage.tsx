@@ -144,7 +144,7 @@ export function CVPage() {
                     ) : (
                       <span className="font-bold text-slate-900">{cert.name}</span>
                     )}
-                    <span className="text-slate-400 font-medium"> — {cert.issuer} ({cert.year})</span>
+                    <span className="text-slate-400 font-medium"> — {cert.issuer}{cert.year ? ` (${cert.year})` : ""}</span>
                   </p>
                 </div>
               ))}

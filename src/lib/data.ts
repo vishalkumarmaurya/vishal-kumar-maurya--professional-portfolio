@@ -91,6 +91,13 @@ export const portfolioData = {
   },
   certifications: [
     {
+      name: "Fumigation of Agricultural Commodities",
+      issuer: "National Institute of Agricultural Extension Management (MANAGE)",
+      year: "",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-fumigation-manage-activity-7337734066114334720-a-0X?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
+      icon: Award,
+    },
+    {
       name: "Course on Computer Concepts (CCC)",
       issuer: "NIELIT",
       year: "2023",

@@ -23,7 +23,7 @@ export function HomePage() {
     interests,
   } = portfolioData;
   return (
-    <div className="bg-portfolio-background font-sans text-portfolio-primary selection:bg-blue-100">
+    <div className="bg-portfolio-background font-sans text-portfolio-primary selection:bg-blue-100 min-h-screen">
       <PortfolioHeader />
       <main>
         {/* Hero Section */}

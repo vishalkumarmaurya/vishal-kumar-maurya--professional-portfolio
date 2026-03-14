@@ -17,7 +17,6 @@ export function HomePage() {
     skills,
     certifications,
     researchAndPublications,
-    projects,
     languages,
     interests,
   } = portfolioData;
@@ -120,27 +119,6 @@ export function HomePage() {
                 ))}
               </div>
             </div>
-          </div>
-        </PortfolioSection>
-        {/* Projects Section */}
-        <PortfolioSection id="projects" title="Projects">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-portfolio-primary flex items-center">
-                    <project.icon className="w-6 h-6 mr-3 text-blue-800" />
-                    {project.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-gray-700 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => <Badge key={tag} variant="outline">{tag}</Badge>)}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </PortfolioSection>
         {/* Certifications Section */}

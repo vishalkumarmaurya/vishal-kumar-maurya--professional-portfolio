@@ -1,9 +1,7 @@
 import {
   Briefcase,
   GraduationCap,
-  Lightbulb,
   Award,
-  Rocket,
   Linkedin,
   Github,
   Languages,
@@ -141,22 +139,6 @@ export const portfolioData = {
       icon: FileText,
     },
   ],
-  projects: [
-    {
-      name: "Smart Irrigation System",
-      description:
-        "An IoT-based system that uses real-time soil moisture data to automate irrigation, conserving water and improving crop yield. The system includes a web dashboard for remote monitoring and control.",
-      tags: ["IoT", "Python", "React", "AWS"],
-      icon: Rocket,
-    },
-    {
-      name: "Pest Detection using AI",
-      description:
-        "A machine learning model trained to identify common crop pests from images. The model was deployed as a mobile application to assist farmers in early pest detection and management.",
-      tags: ["Machine Learning", "TensorFlow", "Android"],
-      icon: Rocket,
-    },
-  ],
   languages: [
     { name: "Hindi", proficiency: "Fluent", icon: Languages },
     { name: "English", proficiency: "Proficient", icon: Languages },
@@ -173,7 +155,7 @@ export const navLinks = [
   { name: "Experience", to: "experience" },
   { name: "Education", to: "education" },
   { name: "Skills", to: "skills" },
-  { name: "Projects", to: "projects" },
+  { name: "Certifications", to: "certifications" },
   { name: "Research", to: "research" },
   { name: "Contact", to: "contact" },
 ];

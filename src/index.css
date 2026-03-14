@@ -65,6 +65,9 @@
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     text-rendering: optimizeLegibility;
   }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
 }
 @layer components {
   /* Enhanced Button System */

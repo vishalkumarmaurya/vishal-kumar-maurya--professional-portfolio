@@ -78,23 +78,23 @@ export function HomePage() {
             {workExperience.map((job, index) => (
               <Card key={index} className="border-none shadow-soft hover:shadow-md transition-all duration-300">
                 <CardHeader className="pb-2">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-                    <div className="flex items-center gap-4">
-                      <div className="p-2 bg-blue-100 rounded-lg">
+                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 bg-blue-100 rounded-lg shrink-0 mt-1">
                         <job.icon className="w-6 h-6 text-blue-700" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl font-bold text-slate-900">{job.role}</CardTitle>
-                        <p className="text-blue-600 font-semibold">{job.company}</p>
+                        <CardTitle className="text-2xl font-bold text-slate-900 leading-tight">{job.company}</CardTitle>
+                        <p className="text-lg text-blue-700 font-semibold mt-1">{job.role}</p>
+                        <p className="text-sm font-bold text-blue-600 uppercase tracking-widest mt-2">
+                          {job.duration}
+                        </p>
                       </div>
                     </div>
-                    <Badge variant="outline" className="w-fit border-blue-200 text-blue-700 font-medium">
-                      {job.duration}
-                    </Badge>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-slate-600 leading-relaxed">{job.description}</p>
+                <CardContent className="pt-2">
+                  <p className="text-slate-600 leading-relaxed border-t border-slate-100 pt-4">{job.description}</p>
                 </CardContent>
               </Card>
             ))}

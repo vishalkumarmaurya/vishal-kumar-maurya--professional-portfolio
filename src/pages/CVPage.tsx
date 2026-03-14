@@ -82,12 +82,12 @@ export function CVPage() {
             <div className="space-y-8">
               {workExperience.map((job, index) => (
                 <div key={index} className="print:break-inside-avoid">
+                  <h3 className="text-lg font-bold text-slate-900 mb-1">{job.company}</h3>
                   <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-lg font-bold text-slate-900">{job.role}</h3>
+                    <p className="text-md font-bold text-blue-700">{job.role}</p>
                     <span className="text-xs font-black text-slate-400 uppercase">{job.duration}</span>
                   </div>
-                  <p className="text-md font-bold text-blue-700 mb-3">{job.company}</p>
-                  <p className="text-slate-600 leading-relaxed text-sm">{job.description}</p>
+                  <p className="text-slate-600 leading-relaxed text-sm mt-2">{job.description}</p>
                 </div>
               ))}
             </div>

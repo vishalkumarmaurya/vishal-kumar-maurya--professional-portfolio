@@ -110,8 +110,9 @@ export const portfolioData = {
     },
     {
       name: "Innovations in Agricultural Extension: Integrating Research, Policy and Practices",
-      issuer: "MANAGE",
+      issuer: "National Institute of Agricultural Extension Management (MANAGE)",
       year: "2023",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agriculturalextension-innovation-activity-7366763048734257153-sU2m?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
       icon: Award,
     },
     {

@@ -275,7 +275,12 @@ export function HomePage() {
           </div>
         </PortfolioSection>
         {/* Contact Section */}
-        <PortfolioSection id="contact" title="Get In Touch" className="bg-slate-900 text-white">
+        <PortfolioSection 
+          id="contact" 
+          title="Get In Touch" 
+          className="bg-slate-900 text-white"
+          titleClassName="text-white"
+        >
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-slate-400 text-lg mb-10">
               Interested in collaboration or professional opportunities? Feel free to reach out. I am always open to discussing innovations in Agri-Tech.

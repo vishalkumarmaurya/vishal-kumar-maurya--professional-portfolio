@@ -75,7 +75,7 @@ export function CVPage() {
         <main className="space-y-10">
           <section className="print:break-inside-avoid">
             <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Career Objective</h2>
-            <p className="text-slate-700 leading-relaxed font-medium">{careerObjective}</p>
+            <p className="text-slate-700 leading-relaxed font-normal">{careerObjective}</p>
           </section>
           <section>
             <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Work Experience</h2>

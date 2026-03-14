@@ -19,7 +19,7 @@ import {
   ExternalLink,
   FileText
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 export function HomePage() {
   const {
     name,

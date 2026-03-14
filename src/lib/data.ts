@@ -126,7 +126,7 @@ export const portfolioData = {
     },
     {
       name: "Extension for Horticultural Technologies",
-      issuer: "National Institute of Agricultural Extension Management (MANAGE) in collaboration with ICAR-National Research Centre on Litchi (NRCL), Muzaffarpur, Bihar",
+      issuer: "MANAGE & ICAR-NRCL",
       year: "",
       url: "https://www.linkedin.com/posts/vishalkmaurya_horticulture-agriculture-extensiontraining-activity-7223693793529671680-bt2A?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
       icon: Award,
@@ -139,7 +139,7 @@ export const portfolioData = {
       icon: Award,
     },
     {
-      name: "AGRI BUSINESS KNOWLEDGE SERIES (AKS) 2023",
+      name: "Agri Business Knowledge Series (AKS)",
       issuer: "ISAB",
       year: "",
       url: "https://www.linkedin.com/posts/vishalkmaurya_agribusiness-agriculture-isab-activity-7084884958292393985-doau?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",

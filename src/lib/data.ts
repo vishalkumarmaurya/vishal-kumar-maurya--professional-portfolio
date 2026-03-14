@@ -115,6 +115,7 @@ export const portfolioData = {
       name: "Agriculture 4.0: The Future of Farming Technology",
       issuer: "Just Agriculture Magazine",
       year: "",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agripreneurship-futureoffarming-activity-7054733364754268160-IfYI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
       icon: Award,
     },
     {

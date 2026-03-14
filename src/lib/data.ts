@@ -14,7 +14,7 @@ export const portfolioData = {
   name: "Vishal Kumar Maurya",
   title: "Aspiring Agri-Tech Innovator",
   careerObjective:
-    "Motivated and detail-oriented undergraduate student pursuing a B.Sc. (Hons) in Agriculture at Bundelkhand University, Jhansi. Dedicated to developing a strong foundation in agricultural science and technology. Seeking opportunities for internships and professional roles to gain field experience, enhance technical knowledge, and contribute to the agricultural sector’s growth.",
+    "Motivated and detail-oriented undergraduate student pursuing a B.Sc. (Hons) in Agriculture at Bundelkhand University, Jhansi (Expected Graduation: Aug 2026). Dedicated to developing a strong foundation in agricultural science and technology. Seeking opportunities for internships and professional roles to gain field experience, enhance technical knowledge, and contribute to the agricultural sector’s growth.",
   contact: {
     phone: "7991660085",
     email: "vishalkumarmaurya913@gmail.com",

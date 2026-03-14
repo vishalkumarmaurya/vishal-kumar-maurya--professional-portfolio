@@ -6,17 +6,17 @@ import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Mail, 
-  Link as LinkIcon, 
-  FileText, 
-  Cpu, 
-  Users, 
-  Phone, 
-  MapPin, 
-  Languages, 
-  Heart, 
-  ArrowRight 
+import {
+  Mail,
+  Link as LinkIcon,
+  FileText,
+  Cpu,
+  Users,
+  Phone,
+  MapPin,
+  Languages,
+  Heart,
+  ArrowRight
 } from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {

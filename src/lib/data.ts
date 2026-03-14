@@ -34,6 +34,14 @@ export const portfolioData = {
   },
   workExperience: [
     {
+      role: "Rural Agriculture / Awareness Work",
+      company: "Village Deli Block Babina Jhansi (U.P)",
+      duration: "August - December (6 months)",
+      description:
+        "Conducted rural agriculture awareness programs, engaging with local farming communities to share modern agricultural practices and sustainable techniques. Assisted in community outreach and education regarding government agricultural schemes.",
+      icon: Briefcase,
+    },
+    {
       role: "Agricultural Subsidies Intern",
       company: "Indian Chamber of Food and Agriculture (ICFA)",
       duration: "Mar 2024 – May 2024",

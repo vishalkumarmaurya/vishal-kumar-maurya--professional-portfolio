@@ -66,7 +66,7 @@ export function CVPage() {
             <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Work Experience</h2>
             <div className="space-y-8">
               {workExperience.map((job, index) => (
-                <div key={index} className="group">
+                <div key={index} className="group print:break-inside-avoid">
                   <div className="flex justify-between items-baseline mb-1">
                     <h3 className="text-lg font-bold text-slate-900">{job.role}</h3>
                     <span className="text-xs font-black text-slate-400 uppercase">{job.duration}</span>
@@ -81,7 +81,7 @@ export function CVPage() {
             <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Education</h2>
             <div className="space-y-8">
               {education.map((edu, index) => (
-                <div key={index}>
+                <div key={index} className="print:break-inside-avoid">
                   <div className="flex justify-between items-baseline mb-1">
                     <h3 className="text-lg font-bold text-slate-900">{edu.degree}</h3>
                     <span className="text-xs font-black text-slate-400 uppercase">{edu.duration}</span>

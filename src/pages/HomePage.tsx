@@ -76,7 +76,7 @@ export function HomePage() {
         <PortfolioSection id="experience" title="Work Experience" className="bg-slate-50">
           <div className="max-w-4xl mx-auto space-y-8">
             {workExperience.map((job, index) => (
-              <Card key={index} className="border-none shadow-soft hover:shadow-md transition-shadow">
+              <Card key={index} className="border-none shadow-soft hover:shadow-md transition-all duration-300">
                 <CardHeader className="pb-2">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                     <div className="flex items-center gap-4">

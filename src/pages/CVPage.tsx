@@ -56,17 +56,17 @@ export function CVPage() {
               <span className="font-semibold text-slate-900 text-pretty max-w-[220px]">{contact.address}</span>
               <MapPin size={14} className="text-slate-400 shrink-0" />
             </p>
-            <div className="flex flex-col md:items-end gap-1.5 pt-2">
+            <div className="flex flex-col md:items-end gap-1.5 pt-2 w-full">
               {contact.social.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-xs font-black uppercase text-blue-700 hover:text-blue-800 transition-colors group"
+                  className="flex items-center md:justify-end gap-2 text-xs font-black uppercase text-blue-700 hover:text-blue-800 transition-colors group w-full"
                 >
-                  <span className="truncate max-w-[200px]">{formatUrl(social.url)}</span>
-                  <social.icon size={14} className="text-slate-400 group-hover:text-blue-700" />
+                  <span className="truncate max-w-[200px] print:max-w-none">{formatUrl(social.url)}</span>
+                  <social.icon size={14} className="text-slate-400 group-hover:text-blue-700 shrink-0" />
                 </a>
               ))}
             </div>
@@ -82,8 +82,8 @@ export function CVPage() {
             <div className="space-y-8">
               {workExperience.map((job, index) => (
                 <div key={index} className="print:break-inside-avoid">
-                  <div className="flex justify-between items-start mb-1">
-                    <h3 className="text-lg font-black text-slate-900">{job.company}</h3>
+                  <div className="flex justify-between items-start mb-1 gap-4">
+                    <h3 className="text-lg font-black text-slate-900 leading-tight">{job.company}</h3>
                     <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{job.duration}</span>
                   </div>
                   <p className="text-md font-bold text-blue-700 mb-2">{job.role}</p>
@@ -97,7 +97,7 @@ export function CVPage() {
             <div className="space-y-8">
               {education.map((edu, index) => (
                 <div key={index} className="print:break-inside-avoid">
-                  <div className="flex justify-between items-start mb-1">
+                  <div className="flex justify-between items-start mb-1 gap-4">
                     <h3 className="text-lg font-black text-slate-900 leading-tight">{edu.institution}</h3>
                     <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{edu.duration}</span>
                   </div>
@@ -156,8 +156,13 @@ export function CVPage() {
               {researchAndPublications.map((pub, index) => (
                 <div key={index} className="text-sm">
                   <div className="flex items-start justify-between gap-4">
-                    <a href={pub.url} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-blue-700 leading-snug flex-1 transition-colors group flex items-center gap-2">
-                      {pub.title}
+                    <a 
+                      href={pub.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="font-bold text-slate-900 hover:text-blue-700 leading-snug flex-1 transition-colors group flex items-start gap-2"
+                    >
+                      <span className="flex-1">{pub.title}</span>
                       <ExternalLink size={12} className="text-slate-400 group-hover:text-blue-700 mt-1 shrink-0 print:hidden" />
                     </a>
                   </div>

@@ -43,8 +43,8 @@ export const portfolioData = {
     },
     {
       role: "Rural Agriculture / Awareness Work",
-      company: "Village Deli Block Babina Jhansi (U.P)",
-      duration: "August - December (6 months)",
+      company: "Bundelkhand University Jhansi Institute of Agricultural Sciences",
+      duration: "Aug 2025 – Dec 2025 (6 months)",
       description:
         "Conducted rural agriculture awareness programs, engaging with local farming communities to share modern agricultural practices and sustainable techniques. Assisted in community outreach and education regarding government agricultural schemes.",
       icon: Briefcase,

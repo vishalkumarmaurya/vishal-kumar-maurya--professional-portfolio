@@ -126,6 +126,7 @@ export const portfolioData = {
       name: "Extension for Horticultural Technologies",
       issuer: "National Institute of Agricultural Extension Management (MANAGE) in collaboration with ICAR-National Research Centre on Litchi (NRCL), Muzaffarpur, Bihar",
       year: "2024",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_horticulture-agriculture-extensiontraining-activity-7223693793529671680-bt2A?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
       icon: Award,
     },
     {

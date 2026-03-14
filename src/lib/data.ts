@@ -124,7 +124,7 @@ export const portfolioData = {
     },
     {
       name: "Extension for Horticultural Technologies",
-      issuer: "ICAR-NRCL & MANAGE",
+      issuer: "National Institute of Agricultural Extension Management (MANAGE) in collaboration with ICAR-National Research Centre on Litchi (NRCL), Muzaffarpur, Bihar",
       year: "2024",
       icon: Award,
     },

@@ -165,5 +165,6 @@ export const navLinks = [
   { name: "Skills", to: "skills" },
   { name: "Certifications", to: "certifications" },
   { name: "Research", to: "research" },
+  { name: "Personal", to: "personal" },
   { name: "Contact", to: "contact" },
 ];

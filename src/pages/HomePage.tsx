@@ -105,11 +105,12 @@ export function HomePage() {
               <div key={index} className="relative pl-8 border-l-2 border-blue-100 py-4 last:pb-0">
                 <div className="absolute left-[-9px] top-6 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm" />
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                  <h3 className="text-xl font-bold text-slate-900">{edu.degree}</h3>
+                  {/* Swap display hierarchy: Institution (College) first, then Degree */}
+                  <h3 className="text-xl font-bold text-slate-900">{edu.institution}</h3>
                   <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">{edu.duration}</span>
                 </div>
-                <p className="text-lg text-slate-700 font-medium mb-2">{edu.institution}</p>
-                <p className="text-slate-600">{edu.description}</p>
+                <p className="text-lg text-blue-700 font-semibold mb-2">{edu.degree}</p>
+                <p className="text-slate-600 leading-relaxed">{edu.description}</p>
               </div>
             ))}
           </div>

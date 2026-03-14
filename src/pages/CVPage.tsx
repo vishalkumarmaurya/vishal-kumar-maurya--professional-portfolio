@@ -98,10 +98,12 @@ export function CVPage() {
               {education.map((edu, index) => (
                 <div key={index} className="print:break-inside-avoid">
                   <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-lg font-bold text-slate-900">{edu.degree}</h3>
+                    {/* Institution as Primary Bold Header */}
+                    <h3 className="text-lg font-bold text-slate-900">{edu.institution}</h3>
                     <span className="text-xs font-black text-slate-400 uppercase">{edu.duration}</span>
                   </div>
-                  <p className="text-md font-bold text-slate-700 mb-2">{edu.institution}</p>
+                  {/* Degree as Secondary Bold Header below Institution */}
+                  <p className="text-md font-bold text-blue-700 mb-2">{edu.degree}</p>
                   <p className="text-slate-600 leading-relaxed text-sm">{edu.description}</p>
                 </div>
               ))}

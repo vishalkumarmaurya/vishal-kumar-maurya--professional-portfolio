@@ -187,7 +187,7 @@ export function HomePage() {
                   </div>
                   <p className="font-bold text-slate-900 mb-1 leading-tight flex-1">{cert.name}</p>
                   <div className="flex flex-col gap-1 mt-4 pt-4 border-t border-slate-50">
-                    <p className="text-xs font-semibold text-slate-500 italic">
+                    <p className="text-xs font-semibold text-slate-600 italic">
                       {cert.issuer}{cert.year ? ` • ${cert.year}` : ""}
                     </p>
                     {cert.url && (

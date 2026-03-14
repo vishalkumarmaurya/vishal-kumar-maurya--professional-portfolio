@@ -74,17 +74,17 @@ export function CVPage() {
         </header>
         <main className="space-y-10">
           <section className="print:break-inside-avoid">
-            <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Career Objective</h2>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Career Objective</h2>
             <p className="text-slate-700 leading-relaxed font-normal">{careerObjective}</p>
           </section>
           <section>
-            <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Work Experience</h2>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Work Experience</h2>
             <div className="space-y-8">
               {workExperience.map((job, index) => (
                 <div key={index} className="print:break-inside-avoid">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-lg font-black text-slate-900">{job.company}</h3>
-                    <span className="text-[11px] font-black text-slate-400 uppercase shrink-0 pt-1">{job.duration}</span>
+                    <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{job.duration}</span>
                   </div>
                   <p className="text-md font-bold text-blue-700 mb-2">{job.role}</p>
                   <p className="text-slate-600 leading-relaxed text-[13.5px] whitespace-pre-line">{job.description}</p>
@@ -93,13 +93,13 @@ export function CVPage() {
             </div>
           </section>
           <section>
-            <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Education</h2>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Education</h2>
             <div className="space-y-8">
               {education.map((edu, index) => (
                 <div key={index} className="print:break-inside-avoid">
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-lg font-black text-slate-900 leading-tight">{edu.institution}</h3>
-                    <span className="text-[11px] font-black text-slate-400 uppercase shrink-0 pt-1">{edu.duration}</span>
+                    <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{edu.duration}</span>
                   </div>
                   <p className="text-md font-bold text-blue-700 mb-2">{edu.degree}</p>
                   <p className="text-slate-600 leading-relaxed text-[13.5px]">{edu.description}</p>
@@ -109,7 +109,7 @@ export function CVPage() {
           </section>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <section className="print:break-inside-avoid">
-              <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Technical Proficiencies</h2>
+              <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Technical Proficiencies</h2>
               <div className="flex flex-wrap gap-2">
                 {skills.technical.map((skill) => (
                   <Badge key={skill.name} variant="outline" className="border-slate-200 text-slate-700 font-bold uppercase text-[10px] py-1 px-3">
@@ -119,7 +119,7 @@ export function CVPage() {
               </div>
             </section>
             <section className="print:break-inside-avoid">
-              <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Soft Skills</h2>
+              <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Soft Skills</h2>
               <div className="flex flex-wrap gap-2">
                 {skills.soft.map((skill) => (
                   <Badge key={skill.name} variant="outline" className="border-slate-200 text-slate-700 font-bold uppercase text-[10px] py-1 px-3">
@@ -130,7 +130,7 @@ export function CVPage() {
             </section>
           </div>
           <section className="print:break-inside-avoid">
-            <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Certifications</h2>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Certifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
               {certifications.map((cert, index) => (
                 <div key={index} className="flex items-start gap-2 text-sm leading-tight">
@@ -139,26 +139,26 @@ export function CVPage() {
                     {cert.url ? (
                       <a href={cert.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition-colors inline-flex items-center gap-1 group">
                         <span className="font-bold text-slate-900 group-hover:text-blue-700">{cert.name}</span>
-                        <ExternalLink size={10} className="text-slate-300 group-hover:text-blue-700 print:hidden" />
+                        <ExternalLink size={10} className="text-slate-400 group-hover:text-blue-700 print:hidden" />
                       </a>
                     ) : (
                       <span className="font-bold text-slate-900">{cert.name}</span>
                     )}
-                    <span className="text-slate-400 font-medium"> — {cert.issuer}{cert.year ? ` (${cert.year})` : ""}</span>
+                    <span className="text-slate-500 font-medium"> — {cert.issuer}{cert.year ? ` (${cert.year})` : ""}</span>
                   </p>
                 </div>
               ))}
             </div>
           </section>
           <section className="print:break-inside-avoid">
-            <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Research & Publications</h2>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Research & Publications</h2>
             <div className="space-y-5">
               {researchAndPublications.map((pub, index) => (
                 <div key={index} className="text-sm">
                   <div className="flex items-start justify-between gap-4">
                     <a href={pub.url} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-blue-700 leading-snug flex-1 transition-colors group flex items-center gap-2">
                       {pub.title}
-                      <ExternalLink size={12} className="text-slate-300 group-hover:text-blue-700 mt-1 shrink-0 print:hidden" />
+                      <ExternalLink size={12} className="text-slate-400 group-hover:text-blue-700 mt-1 shrink-0 print:hidden" />
                     </a>
                   </div>
                   <p className="text-slate-500 italic uppercase text-[10px] font-bold tracking-widest mt-1">{pub.journal}</p>
@@ -168,18 +168,18 @@ export function CVPage() {
           </section>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <section className="print:break-inside-avoid">
-              <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Languages</h2>
+              <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Languages</h2>
               <ul className="space-y-2">
                 {languages.map((lang) => (
                   <li key={lang.name} className="text-sm flex justify-between items-center">
                     <span className="font-bold text-slate-800">{lang.name}</span>
-                    <span className="text-slate-400 uppercase text-[10px] font-black border-b border-slate-100">{lang.proficiency}</span>
+                    <span className="text-slate-500 uppercase text-[10px] font-black border-b border-slate-100">{lang.proficiency}</span>
                   </li>
                 ))}
               </ul>
             </section>
             <section className="print:break-inside-avoid">
-              <h2 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Interests</h2>
+              <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Interests</h2>
               <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                 {interests.map((interest) => (
                   <span key={interest.name} className="text-sm font-bold text-slate-700 flex items-center gap-1.5">
@@ -190,7 +190,7 @@ export function CVPage() {
             </section>
           </div>
         </main>
-        <footer className="mt-16 pt-8 border-t border-slate-100 text-center text-[10px] font-black uppercase tracking-[0.3em] text-slate-300">
+        <footer className="mt-16 pt-8 border-t border-slate-100 text-center text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
           Generated Professional CV • {name} • {new Date().getFullYear()}
         </footer>
       </div>

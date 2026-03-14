@@ -141,6 +141,7 @@ export const portfolioData = {
       name: "AGRI BUSINESS KNOWLEDGE SERIES (AKS) 2023",
       issuer: "ISAB",
       year: "",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_agribusiness-agriculture-isab-activity-7084884958292393985-doau?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
       icon: Award,
     },
   ],

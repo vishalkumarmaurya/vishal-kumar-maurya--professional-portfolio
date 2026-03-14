@@ -6,7 +6,7 @@ import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Link as LinkIcon, FileText, Cpu, Users } from "lucide-react";
+import { Mail, Link as LinkIcon, FileText, Cpu, Users, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {
   const {
@@ -19,8 +19,6 @@ export function HomePage() {
     skills,
     certifications,
     researchAndPublications,
-    languages,
-    interests,
   } = portfolioData;
   return (
     <div className="bg-portfolio-background font-sans text-portfolio-primary selection:bg-blue-100">
@@ -29,11 +27,11 @@ export function HomePage() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50"
+          className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50"
         >
           <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-7xl lg:text-8xl font-bold font-display text-slate-900 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -41,7 +39,7 @@ export function HomePage() {
             >
               {name}
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="mt-6 text-xl md:text-2xl text-blue-700 font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,7 +47,7 @@ export function HomePage() {
             >
               {title}
             </motion.p>
-            <motion.div 
+            <motion.div
               className="mt-10 flex flex-col sm:flex-row justify-center gap-4 px-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -199,19 +197,19 @@ export function HomePage() {
               Interested in collaboration or professional opportunities? Feel free to reach out. I am always open to discussing innovations in Agri-Tech.
             </p>
             <div className="flex flex-col items-center gap-6">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-12 h-14 text-lg">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-12 h-14 text-lg transition-transform hover:scale-105 active:scale-95">
                 <a href={`mailto:${contact.email}`} className="flex items-center gap-3">
                   <Mail className="w-5 h-5" /> Send an Email
                 </a>
               </Button>
               <div className="flex gap-8 mt-4">
                 {contact.social.map(social => (
-                  <a 
-                    key={social.name} 
-                    href={social.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-slate-500 hover:text-white transition-colors"
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-500 hover:text-white transition-all hover:scale-110"
                     aria-label={social.name}
                   >
                     <social.icon className="w-8 h-8" />
@@ -222,15 +220,28 @@ export function HomePage() {
           </div>
         </PortfolioSection>
       </main>
-      <footer className="bg-slate-950 py-12 border-t border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500">
-          <p className="text-sm tracking-widest uppercase mb-4">&copy; {new Date().getFullYear()} {name}</p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-xs font-medium">
-            <span>{contact.email}</span>
-            <span className="hidden md:block opacity-30">|</span>
-            <span>{contact.phone}</span>
+      <footer className="bg-slate-950 py-16 border-t border-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-400">
+          <p className="text-sm tracking-widest uppercase mb-8 font-bold text-white">&copy; {new Date().getFullYear()} {name}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-sm">
+            <div className="flex flex-col items-center gap-2">
+              <Mail className="w-5 h-5 text-blue-500" />
+              <span className="font-medium">{contact.email}</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Phone className="w-5 h-5 text-blue-500" />
+              <span className="font-medium">{contact.phone}</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <MapPin className="w-5 h-5 text-blue-500" />
+              <span className="font-medium text-pretty px-4">{contact.address}</span>
+            </div>
           </div>
-          <p className="mt-6 text-xs text-slate-600 max-w-md mx-auto leading-relaxed">{contact.address}</p>
+          <div className="mt-12 flex justify-center gap-4">
+            <Button asChild variant="link" className="text-slate-500 hover:text-white text-xs">
+              <RouterLink to="/cv">Download CV as PDF</RouterLink>
+            </Button>
+          </div>
         </div>
       </footer>
     </div>

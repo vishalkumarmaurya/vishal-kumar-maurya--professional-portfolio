@@ -34,19 +34,19 @@ export const portfolioData = {
   },
   workExperience: [
     {
-      role: "Summer Internship",
-      company: "Indian Chamber of Food and Agriculture (ICFA)",
-      duration: "Mar 2024 – May 2024",
-      description:
-        "Conducted research on agricultural subsidy programs and related government policies. Developed understanding of food and agriculture sector frameworks. Gained experience in report writing and virtual teamwork.",
-      icon: Briefcase,
-    },
-    {
       role: "Rural Agriculture / Awareness Work Experience",
       company: "Bundelkhand University Jhansi Institute of Agricultural Sciences",
       duration: "Aug 2025 – Dec 2025 (6 months)",
       description:
         "Allotted to Village Deli Block Babina Jhansi (U.P). Conducted rural agriculture awareness programs with local farming communities. Shared modern agricultural practices, sustainable techniques, and government schemes. Gained practical field experience in community outreach, education, and agricultural extension services.",
+      icon: Briefcase,
+    },
+    {
+      role: "Summer Internship",
+      company: "Indian Chamber of Food and Agriculture (ICFA)",
+      duration: "Mar 2024 – May 2024",
+      description:
+        "Conducted research on agricultural subsidy programs and related government policies. Developed understanding of food and agriculture sector frameworks. Gained experience in report writing and virtual teamwork.",
       icon: Briefcase,
     },
   ],

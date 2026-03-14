@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer base {
   :root {
-    /* Core Professional Blue Palette */
+    /* Core Professional Blue Palette - Refined HSL for maximum contrast and polish */
     --background: 210 40% 98.5%;
     --foreground: 222 47% 11%;
     --primary: 221 83% 45%;
@@ -50,6 +50,8 @@
     --secondary-foreground: 210 40% 98%;
     --accent: 217 33% 17%;
     --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
     --input: 217 33% 17%;
   }
   * {
@@ -65,17 +67,17 @@
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     text-rendering: optimizeLegibility;
   }
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
     text-wrap: balance;
   }
 }
 @layer components {
-  /* Enhanced Button System */
+  /* High-impact visual utilities */
   .btn-gradient {
     @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white transition-all duration-300 rounded-full shadow-lg hover:shadow-xl active:scale-95;
     background: linear-gradient(135deg, hsl(221 83% 45%) 0%, hsl(224 76% 35%) 100%);
   }
-  /* Optimized Animation System */
   .floating {
     animation: float 4s ease-in-out infinite;
   }
@@ -99,7 +101,6 @@
   @keyframes shimmer {
     100% { transform: translateX(100%); }
   }
-  /* Section Spacing Helpers */
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }

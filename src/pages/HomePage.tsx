@@ -86,7 +86,7 @@ export function HomePage() {
             </motion.div>
           </div>
         </section>
-        {/* About Section */}
+        {/* Career Objective Section */}
         <PortfolioSection id="about" title="Career Objective" className="bg-white">
           <div className="max-w-3xl mx-auto">
             <p className="text-center text-lg md:text-xl leading-relaxed text-slate-700 font-normal whitespace-pre-line tracking-tight">
@@ -94,7 +94,7 @@ export function HomePage() {
             </p>
           </div>
         </PortfolioSection>
-        {/* Work Experience Section */}
+        {/* Experience Section */}
         <PortfolioSection id="experience" title="Experience" className="bg-blue-50/50">
           <div className="max-w-4xl mx-auto space-y-8">
             {workExperience.map((job, index) => (
@@ -125,7 +125,7 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
-        {/* Education Section */}
+        {/* Academic Path Section */}
         <PortfolioSection id="education" title="Academic Path" className="bg-white">
           <div className="max-w-4xl mx-auto space-y-12">
             {education.map((edu, index) => (
@@ -222,7 +222,7 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
-        {/* Languages & Interests */}
+        {/* Personal Details Section */}
         <PortfolioSection id="personal" title="Personal Details" className="bg-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             <Card className="border-none shadow-soft bg-indigo-50/30 overflow-hidden">

@@ -1,11 +1,13 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { PortfolioHeader } from "@/components/PortfolioHeader";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Link as LinkIcon } from "lucide-react";
+import { Mail, Link as LinkIcon, FileText } from "lucide-react";
+import { motion } from "framer-motion";
 export function HomePage() {
   const {
     name,
@@ -21,198 +23,214 @@ export function HomePage() {
     interests,
   } = portfolioData;
   return (
-    <div className="bg-portfolio-background font-sans text-portfolio-muted">
+    <div className="bg-portfolio-background font-sans text-portfolio-primary selection:bg-blue-100">
       <PortfolioHeader />
       <main>
         {/* Hero Section */}
         <section
           id="hero"
-          className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-indigo-100"
+          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold font-display text-portfolio-primary animate-fade-in">
+          <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px]" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <motion.h1 
+              className="text-5xl md:text-7xl lg:text-8xl font-bold font-display text-slate-900 tracking-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               {name}
-            </h1>
-            <p className="mt-4 text-xl md:text-2xl text-portfolio-primary/80 animate-fade-in [animation-delay:300ms]">
+            </motion.h1>
+            <motion.p 
+              className="mt-6 text-xl md:text-2xl text-blue-700 font-medium"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
               {title}
-            </p>
-            <div className="mt-8 flex justify-center gap-4 animate-fade-in [animation-delay:600ms]">
-              <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <a href={`mailto:${contact.email}`}>Contact Me</a>
+            </motion.p>
+            <motion.div 
+              className="mt-10 flex flex-col sm:flex-row justify-center gap-4 px-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              <Button asChild size="lg" className="bg-blue-700 hover:bg-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 rounded-full px-8">
+                <a href={`mailto:${contact.email}`}>Get in Touch</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-blue-800 text-blue-800 hover:bg-blue-800 hover:text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <a href="/cv" target="_blank" rel="noopener noreferrer">Download CV</a>
+              <Button asChild size="lg" variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-50 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 rounded-full px-8">
+                <RouterLink to="/cv">View Resume</RouterLink>
               </Button>
-            </div>
+            </motion.div>
           </div>
         </section>
         {/* About Section */}
-        <PortfolioSection id="about" title="Career Objective">
-          <p className="max-w-3xl mx-auto text-center text-lg md:text-xl leading-relaxed text-gray-700">
-            {careerObjective}
-          </p>
+        <PortfolioSection id="about" title="Career Objective" className="bg-white">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-center text-lg md:text-xl leading-relaxed text-slate-700 font-normal">
+              {careerObjective}
+            </p>
+          </div>
         </PortfolioSection>
         {/* Work Experience Section */}
-        <PortfolioSection id="experience" title="Work Experience">
-          <div className="max-w-3xl mx-auto space-y-8">
+        <PortfolioSection id="experience" title="Work Experience" className="bg-slate-50">
+          <div className="max-w-4xl mx-auto space-y-8">
             {workExperience.map((job, index) => (
-              <Card key={index} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <CardHeader>
-                  <div className="flex justify-between items-start flex-col sm:flex-row sm:items-center">
-                    <div>
-                      <CardTitle className="text-xl font-semibold text-portfolio-primary">{job.role}</CardTitle>
-                      <p className="text-lg text-portfolio-primary/90">{job.company}</p>
+              <Card key={index} className="border-none shadow-soft hover:shadow-md transition-shadow">
+                <CardHeader className="pb-2">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                    <div className="flex items-center gap-4">
+                      <div className="p-2 bg-blue-100 rounded-lg">
+                        <job.icon className="w-6 h-6 text-blue-700" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl font-bold text-slate-900">{job.role}</CardTitle>
+                        <p className="text-blue-600 font-semibold">{job.company}</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-portfolio-muted font-medium mt-2 sm:mt-0">{job.duration}</p>
+                    <Badge variant="outline" className="w-fit border-blue-200 text-blue-700 font-medium">
+                      {job.duration}
+                    </Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">{job.description}</p>
+                  <p className="text-slate-600 leading-relaxed">{job.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </PortfolioSection>
         {/* Education Section */}
-        <PortfolioSection id="education" title="Education">
-          <div className="max-w-3xl mx-auto space-y-8">
+        <PortfolioSection id="education" title="Academic Background" className="bg-white">
+          <div className="max-w-4xl mx-auto space-y-6">
             {education.map((edu, index) => (
-              <Card key={index} className="transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <CardHeader>
-                  <div className="flex justify-between items-start flex-col sm:flex-row sm:items-center">
-                    <div>
-                      <CardTitle className="text-xl font-semibold text-portfolio-primary">{edu.degree}</CardTitle>
-                      <p className="text-lg text-portfolio-primary/90">{edu.institution}</p>
-                    </div>
-                    <p className="text-sm text-portfolio-muted font-medium mt-2 sm:mt-0">{edu.duration}</p>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">{edu.description}</p>
+              <div key={index} className="relative pl-8 border-l-2 border-blue-100 py-4 last:pb-0">
+                <div className="absolute left-[-9px] top-6 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm" />
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                  <h3 className="text-xl font-bold text-slate-900">{edu.degree}</h3>
+                  <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">{edu.duration}</span>
+                </div>
+                <p className="text-lg text-slate-700 font-medium mb-2">{edu.institution}</p>
+                <p className="text-slate-600">{edu.description}</p>
+              </div>
+            ))}
+          </div>
+        </PortfolioSection>
+        {/* Skills Section */}
+        <PortfolioSection id="skills" title="Skills & Competencies" className="bg-slate-50">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="border-none shadow-soft overflow-hidden">
+              <div className="bg-blue-700 px-6 py-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Cpu className="w-5 h-5" /> Technical Skills
+                </h3>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex flex-wrap gap-3">
+                  {skills.technical.map((skill) => (
+                    <Badge key={skill.name} variant="secondary" className="px-4 py-2 text-sm font-medium bg-blue-50 text-blue-800 border-none">
+                      {skill.name}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-none shadow-soft overflow-hidden">
+              <div className="bg-emerald-600 px-6 py-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Users className="w-5 h-5" /> Soft Skills
+                </h3>
+              </div>
+              <CardContent className="p-6">
+                <div className="flex flex-wrap gap-3">
+                  {skills.soft.map((skill) => (
+                    <Badge key={skill.name} variant="secondary" className="px-4 py-2 text-sm font-medium bg-emerald-50 text-emerald-800 border-none">
+                      {skill.name}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </PortfolioSection>
+        {/* Certifications Section */}
+        <PortfolioSection id="certifications" title="Certifications" className="bg-white">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="group hover:border-blue-200 transition-colors shadow-none border border-slate-100">
+                <CardContent className="p-5 flex flex-col h-full">
+                  <cert.icon className="w-8 h-8 text-blue-600 mb-4 group-hover:scale-110 transition-transform" />
+                  <p className="font-bold text-slate-900 mb-1 leading-tight">{cert.name}</p>
+                  <p className="text-xs text-slate-500 mt-auto pt-2">{cert.issuer} • {cert.year}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </PortfolioSection>
-        {/* Skills Section */}
-        <PortfolioSection id="skills" title="Skills">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Technical Skills</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                {skills.technical.map((skill) => (
-                  <Badge key={skill.name} variant="secondary" className="text-lg px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
-                    <skill.icon className="w-5 h-5 mr-2" />
-                    {skill.name}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Soft Skills</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                {skills.soft.map((skill) => (
-                  <Badge key={skill.name} variant="secondary" className="text-lg px-4 py-2 bg-green-100 text-green-800 hover:bg-green-200 transition-colors">
-                    <skill.icon className="w-5 h-5 mr-2" />
-                    {skill.name}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          </div>
-        </PortfolioSection>
-        {/* Certifications Section */}
-        <PortfolioSection id="certifications" title="Certifications">
-          <div className="max-w-3xl mx-auto space-y-4">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="p-4 transition-all duration-300 hover:shadow-lg">
-                <div className="flex items-center">
-                  <cert.icon className="w-8 h-8 mr-4 text-blue-800" />
-                  <div>
-                    <p className="font-semibold text-portfolio-primary">{cert.name}</p>
-                    <p className="text-sm text-portfolio-muted">{cert.issuer}{cert.year && ` - ${cert.year}`}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </PortfolioSection>
-        {/* Research and Publication Section */}
-        <PortfolioSection id="research" title="Research and Publication">
-          <div className="max-w-3xl mx-auto space-y-4">
+        {/* Research Section */}
+        <PortfolioSection id="research" title="Research & Publications" className="bg-slate-50">
+          <div className="max-w-4xl mx-auto space-y-4">
             {researchAndPublications.map((pub, index) => (
-              <Card key={index} className="p-4 transition-all duration-300 hover:shadow-lg">
-                <div className="flex items-start">
-                  <pub.icon className="w-8 h-8 mr-4 text-blue-800 flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="font-semibold text-portfolio-primary">{pub.title}</p>
-                    <p className="text-sm text-portfolio-muted italic">{pub.journal}</p>
-                    <a href={pub.url} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-600 hover:underline flex items-center mt-1">
-                      View Publication <LinkIcon className="w-3 h-3 ml-1" />
-                    </a>
+              <Card key={index} className="border-none shadow-soft group">
+                <CardContent className="p-6">
+                  <div className="flex gap-4">
+                    <div className="p-3 bg-blue-50 rounded-xl group-hover:bg-blue-100 transition-colors h-fit">
+                      <FileText className="w-6 h-6 text-blue-700" />
+                    </div>
+                    <div className="space-y-2 flex-1">
+                      <h4 className="text-xl font-bold text-slate-900 leading-snug">{pub.title}</h4>
+                      <p className="text-sm font-medium text-slate-500 uppercase tracking-wider">{pub.journal}</p>
+                      <Button asChild variant="link" className="p-0 h-auto text-blue-700 font-bold hover:no-underline">
+                        <a href={pub.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          Access Resource <LinkIcon className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                </CardContent>
               </Card>
             ))}
-          </div>
-        </PortfolioSection>
-        {/* Languages & Interests Section */}
-        <PortfolioSection id="languages-interests" title="Languages & Interests">
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Languages</h3>
-              <div className="space-y-4">
-                {languages.map((lang) => (
-                  <Card key={lang.name} className="p-3">
-                    <div className="flex items-center">
-                      <lang.icon className="w-6 h-6 mr-3 text-blue-800" />
-                      <p className="font-medium text-portfolio-primary">{lang.name} <span className="text-sm text-portfolio-muted">({lang.proficiency})</span></p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-2xl font-semibold text-center mb-6 text-portfolio-primary">Interests</h3>
-              <div className="space-y-4">
-                {interests.map((interest) => (
-                  <Card key={interest.name} className="p-3">
-                    <div className="flex items-center">
-                      <interest.icon className="w-6 h-6 mr-3 text-pink-500" />
-                      <p className="font-medium text-portfolio-primary">{interest.name}</p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
           </div>
         </PortfolioSection>
         {/* Contact Section */}
-        <PortfolioSection id="contact" title="Get In Touch">
-          <div className="max-w-xl mx-auto text-center">
-            <p className="text-lg text-gray-700 mb-8">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of an innovative team.
+        <PortfolioSection id="contact" title="Get In Touch" className="bg-slate-900 text-white">
+          <div className="max-w-2xl mx-auto text-center">
+            <p className="text-slate-400 text-lg mb-10">
+              Interested in collaboration or professional opportunities? Feel free to reach out. I am always open to discussing innovations in Agri-Tech.
             </p>
-            <Button asChild size="lg" className="bg-blue-800 hover:bg-blue-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <a href={`mailto:${contact.email}`} className="flex items-center">
-                <Mail className="w-5 h-5 mr-2" /> Say Hello
-              </a>
-            </Button>
-            <div className="flex justify-center gap-6 mt-8">
-              {contact.social.map(social => (
-                <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-800 transition-colors">
-                  <social.icon className="w-8 h-8" />
+            <div className="flex flex-col items-center gap-6">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-12 h-14 text-lg">
+                <a href={`mailto:${contact.email}`} className="flex items-center gap-3">
+                  <Mail className="w-5 h-5" /> Send an Email
                 </a>
-              ))}
+              </Button>
+              <div className="flex gap-8 mt-4">
+                {contact.social.map(social => (
+                  <a 
+                    key={social.name} 
+                    href={social.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-slate-500 hover:text-white transition-colors"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="w-8 h-8" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </PortfolioSection>
       </main>
-      <footer className="bg-gray-100 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} {name}. All Rights Reserved.</p>
-          <p className="mt-2 text-sm">{contact.email} | {contact.phone}</p>
-          <p className="mt-2 text-sm">{contact.address}</p>
+      <footer className="bg-slate-950 py-12 border-t border-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500">
+          <p className="text-sm tracking-widest uppercase mb-4">&copy; {new Date().getFullYear()} {name}</p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-xs font-medium">
+            <span>{contact.email}</span>
+            <span className="hidden md:block opacity-30">|</span>
+            <span>{contact.phone}</span>
+          </div>
+          <p className="mt-6 text-xs text-slate-600 max-w-md mx-auto leading-relaxed">{contact.address}</p>
         </div>
       </footer>
     </div>

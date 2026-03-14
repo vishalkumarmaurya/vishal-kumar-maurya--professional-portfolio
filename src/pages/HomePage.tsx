@@ -174,10 +174,10 @@ export function HomePage() {
                   <div className="flex justify-between items-start mb-4">
                     <cert.icon className="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform" />
                     {cert.url && (
-                      <a 
-                        href={cert.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={cert.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-blue-700 hover:text-blue-900 transition-colors"
                         title="View Verification"
                       >
@@ -275,9 +275,9 @@ export function HomePage() {
           </div>
         </PortfolioSection>
         {/* Contact Section */}
-        <PortfolioSection 
-          id="contact" 
-          title="Get In Touch" 
+        <PortfolioSection
+          id="contact"
+          title="Get In Touch"
           className="bg-slate-900 text-white"
           titleClassName="text-white"
         >

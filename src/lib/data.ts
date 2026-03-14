@@ -101,6 +101,7 @@ export const portfolioData = {
       name: "Course on Computer Concepts (CCC)",
       issuer: "NIELIT",
       year: "2023",
+      url: "https://www.linkedin.com/posts/vishalkmaurya_course-on-computer-concepts-activity-7438583220033458177-0KBJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWkm8oBahQJbqnDTcQT6cd6gf75jNcrom4",
       icon: Award,
     },
     {

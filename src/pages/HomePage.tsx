@@ -134,7 +134,7 @@ export function HomePage() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-1 group-hover:text-blue-700 transition-colors">{edu.institution}</h3>
                 <p className="text-lg text-blue-700 font-semibold mb-2">{edu.degree}</p>
                 <p className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">{edu.duration}</p>
-                <p className="text-slate-600 leading-relaxed max-w-2xl text-lg">{edu.description}</p>
+                <p className="text-slate-600 leading-relaxed max-w-2xl text-lg whitespace-pre-line">{edu.description}</p>
               </div>
             ))}
           </div>

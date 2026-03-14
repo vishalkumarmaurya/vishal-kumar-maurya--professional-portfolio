@@ -6,7 +6,18 @@ import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Link as LinkIcon, FileText, Cpu, Users, Phone, MapPin, Languages, Heart, ArrowRight } from "lucide-react";
+import { 
+  Mail, 
+  Link as LinkIcon, 
+  FileText, 
+  Cpu, 
+  Users, 
+  Phone, 
+  MapPin, 
+  Languages, 
+  Heart, 
+  ArrowRight 
+} from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {
   const {
@@ -96,7 +107,7 @@ export function HomePage() {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-2">
-                  <p className="text-slate-600 leading-relaxed border-t border-slate-100 pt-4">{job.description}</p>
+                  <p className="text-slate-600 leading-relaxed border-t border-slate-100 pt-4 whitespace-pre-line">{job.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -289,7 +300,7 @@ export function HomePage() {
           </div>
           <div className="mt-12 flex justify-center gap-4">
             <Button asChild variant="link" className="text-slate-500 hover:text-white text-xs">
-              <RouterLink to="/cv">Download CV as PDF</RouterLink>
+              <RouterLink to="/cv">View Professional CV</RouterLink>
             </Button>
           </div>
         </div>

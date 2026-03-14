@@ -33,7 +33,7 @@ export function CVPage() {
             <ArrowLeft size={16} /> Back to Portfolio
           </Link>
         </Button>
-        <Button onClick={handlePrint} className="bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors px-6">
+        <Button onClick={handlePrint} className="bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors px-6 shadow-lg">
           <Printer className="w-4 h-4 mr-2" /> Print PDF
         </Button>
       </div>
@@ -53,8 +53,8 @@ export function CVPage() {
               <Phone size={14} className="text-slate-400" />
             </p>
             <p className="flex items-center md:justify-end gap-2">
-              <span className="font-semibold text-slate-900">{contact.address}</span>
-              <MapPin size={14} className="text-slate-400" />
+              <span className="font-semibold text-slate-900 text-pretty max-w-[220px]">{contact.address}</span>
+              <MapPin size={14} className="text-slate-400 shrink-0" />
             </p>
             <div className="flex flex-col md:items-end gap-1.5 pt-2">
               {contact.social.map((social) => (

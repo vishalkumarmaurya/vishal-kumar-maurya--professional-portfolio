@@ -64,7 +64,7 @@ export const portfolioData = {
       institution: "Ramsurat Malati Intermediate College, Mirzapur",
       duration: "Apr 2020 – Mar 2022",
       description:
-        "U.P. State Board — Percentage: 74.7%. Specialized in agricultural subjects during higher secondary education.",
+        "U.P. State Board — Percentage: 74.70%. Specialized in agricultural subjects during higher secondary education.",
       icon: GraduationCap,
     },
     {

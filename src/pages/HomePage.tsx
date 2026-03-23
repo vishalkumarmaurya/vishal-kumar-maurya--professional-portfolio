@@ -80,7 +80,7 @@ export function HomePage() {
         {/* Career Objective */}
         <PortfolioSection id="about" title="About Me" className="bg-white">
           <div className="max-w-4xl mx-auto bg-slate-50/50 p-10 md:p-16 rounded-[2.5rem] border border-slate-100 shadow-sm">
-            <p className="text-center text-xl md:text-2xl leading-relaxed text-slate-700 font-medium tracking-tight">
+            <p className="text-center text-xl md:text-2xl leading-relaxed text-slate-700 font-medium tracking-tight whitespace-pre-line">
               {careerObjective}
             </p>
           </div>
@@ -107,7 +107,7 @@ export function HomePage() {
                   </div>
                 </CardHeader>
                 <CardContent className="p-8 pt-4">
-                  <p className="text-slate-600 leading-relaxed border-t border-slate-100 pt-8 text-lg font-medium">
+                  <p className="text-slate-600 leading-relaxed border-t border-slate-100 pt-8 text-lg font-medium whitespace-pre-line">
                     {job.description}
                   </p>
                 </CardContent>
@@ -124,7 +124,7 @@ export function HomePage() {
                 <h3 className="text-2xl md:text-3xl font-black text-slate-950 mb-2 uppercase tracking-tight group-hover:text-blue-700 transition-colors">{edu.institution}</h3>
                 <p className="text-xl text-blue-700 font-bold mb-3 uppercase tracking-wide">{edu.degree}</p>
                 <p className="text-xs font-black text-slate-400 uppercase tracking-[0.3em] mb-6">{edu.duration}</p>
-                <p className="text-slate-600 leading-relaxed max-w-2xl text-lg font-medium">{edu.description}</p>
+                <p className="text-slate-600 leading-relaxed max-w-2xl text-lg font-medium whitespace-pre-line">{edu.description}</p>
               </div>
             ))}
           </div>
@@ -301,7 +301,7 @@ export function HomePage() {
           </div>
           <div className="mt-24 pt-12 border-t border-white/5 flex flex-col items-center gap-8">
             <p className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-600">
-              © {new Date().getFullYear()} {name} • Agricultural Specialist
+              © {new Date().getFullYear()} {name} • {title}
             </p>
           </div>
         </div>

@@ -75,7 +75,7 @@ export function CVPage() {
         <main className="space-y-12">
           <section className="print:break-inside-avoid">
             <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Profile</h2>
-            <p className="text-slate-800 leading-relaxed font-medium text-[15px]">{careerObjective}</p>
+            <p className="text-slate-800 leading-relaxed font-medium text-[15px] whitespace-pre-line">{careerObjective}</p>
           </section>
           <section>
             <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-8 border-b border-slate-100 pb-2">Experience</h2>
@@ -87,7 +87,7 @@ export function CVPage() {
                     <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest pt-1">{job.duration}</span>
                   </div>
                   <p className="text-md font-black text-blue-700 uppercase tracking-wider mb-4">{job.role}</p>
-                  <p className="text-slate-700 leading-relaxed text-[14px] font-medium">{job.description}</p>
+                  <p className="text-slate-700 leading-relaxed text-[14px] font-medium whitespace-pre-line">{job.description}</p>
                 </div>
               ))}
             </div>
@@ -102,7 +102,7 @@ export function CVPage() {
                     <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest pt-1">{edu.duration}</span>
                   </div>
                   <p className="text-md font-black text-blue-700 uppercase tracking-wider mb-4">{edu.degree}</p>
-                  <p className="text-slate-700 leading-relaxed text-[14px] font-medium">{edu.description}</p>
+                  <p className="text-slate-700 leading-relaxed text-[14px] font-medium whitespace-pre-line">{edu.description}</p>
                 </div>
               ))}
             </div>
@@ -133,12 +133,23 @@ export function CVPage() {
             <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Certifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
               {certifications.map((cert, index) => (
-                <div key={index} className="flex items-start gap-3 text-[13px] leading-tight">
+                <div key={index} className="flex items-start gap-3 text-[13px] leading-tight group">
                   <div className="w-2 h-2 rounded-full bg-blue-700 mt-1.5 shrink-0" />
-                  <p className="flex-1">
-                    <span className="font-black text-slate-950 uppercase tracking-tight">{cert.name}</span>
+                  <div className="flex-1">
+                    {cert.url ? (
+                      <a 
+                        href={cert.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="font-black text-slate-950 uppercase tracking-tight hover:text-blue-700 hover:underline transition-colors"
+                      >
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <span className="font-black text-slate-950 uppercase tracking-tight">{cert.name}</span>
+                    )}
                     <span className="text-slate-500 font-bold block mt-1 uppercase text-[10px] tracking-widest">{cert.issuer}</span>
-                  </p>
+                  </div>
                 </div>
               ))}
             </div>

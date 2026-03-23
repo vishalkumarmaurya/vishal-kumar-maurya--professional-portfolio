@@ -45,7 +45,7 @@ export function HomePage() {
           <div className="absolute inset-0 z-0 opacity-[0.03] bg-[radial-gradient(#1e40af_1.5px,transparent_1.5px)] [background-size:40px_40px]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-16">
             <motion.h1
-              className="text-6xl md:text-8xl lg:text-[9.5rem] font-black font-display text-slate-950 tracking-tighter leading-[0.95]"
+              className="text-6xl md:text-8xl lg:text-[9.5rem] font-black font-display text-slate-950 tracking-tighter leading-[0.9] sm:leading-[0.95]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -136,13 +136,13 @@ export function HomePage() {
               { title: "Technical", icon: Cpu, items: skills.technical, color: "bg-slate-950" },
               { title: "Personal", icon: Users, items: skills.soft, color: "bg-blue-800" }
             ].map((skillGroup, idx) => (
-              <Card key={idx} className="border-none shadow-soft overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-[2rem]">
+              <Card key={idx} className="border-none shadow-soft overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-[2rem] flex flex-col">
                 <div className={`${skillGroup.color} px-10 py-6 flex items-center justify-between`}>
                   <h3 className="text-xl font-black text-white flex items-center gap-4 uppercase tracking-widest">
                     <skillGroup.icon className="w-6 h-6" /> {skillGroup.title}
                   </h3>
                 </div>
-                <CardContent className="p-10">
+                <CardContent className="p-10 flex-1">
                   <div className="flex flex-wrap gap-3">
                     {skillGroup.items.map((skill) => (
                       <Badge key={skill.name} variant="secondary" className="px-6 py-3 text-sm font-black uppercase tracking-wider bg-white border border-slate-100 text-slate-700 shadow-sm hover:border-blue-500 transition-all cursor-default">
@@ -165,15 +165,20 @@ export function HomePage() {
                     <div className="p-4 bg-slate-50 rounded-2xl group-hover:bg-blue-50 transition-colors">
                       <cert.icon className="w-6 h-6 text-slate-950 group-hover:text-blue-700" />
                     </div>
-                    {cert.url && (
-                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-700 transition-colors">
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
-                    )}
                   </div>
                   <h4 className="font-black text-slate-950 mb-3 leading-tight flex-1 text-xl uppercase tracking-tight">{cert.name}</h4>
-                  <div className="mt-6 pt-6 border-t border-slate-50">
-                    <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">{cert.issuer}</p>
+                  <div className="mt-6 pt-6 border-t border-slate-50 flex items-center justify-between">
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{cert.issuer}</p>
+                    {cert.url && (
+                      <a 
+                        href={cert.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-blue-700 hover:text-blue-900 transition-colors group/link"
+                      >
+                        Verify <ExternalLink className="w-3 h-3 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                      </a>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -186,8 +191,8 @@ export function HomePage() {
             {researchAndPublications.map((pub, index) => (
               <Card key={index} className="bg-white/5 border border-white/10 shadow-none group hover:bg-white/10 transition-all duration-300 rounded-3xl">
                 <CardContent className="p-10">
-                  <div className="flex gap-8 items-start">
-                    <div className="p-5 bg-white/10 rounded-2xl group-hover:scale-110 transition-transform">
+                  <div className="flex flex-col sm:flex-row gap-8 items-start">
+                    <div className="p-5 bg-white/10 rounded-2xl group-hover:scale-110 transition-transform hidden sm:block">
                       <FileText className="w-10 h-10 text-blue-300" />
                     </div>
                     <div className="space-y-4 flex-1">
@@ -208,14 +213,14 @@ export function HomePage() {
         {/* Personal Details Section */}
         <PortfolioSection id="personal" title="Personal" className="bg-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <Card className="border-none shadow-soft overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-[2rem]">
+            <Card className="border-none shadow-soft overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-[2rem] flex flex-col">
               <CardHeader className="bg-slate-950 text-white py-8 px-10">
                 <div className="flex items-center gap-4">
                   <Languages className="w-7 h-7" />
                   <CardTitle className="text-xl font-black uppercase tracking-widest">Languages</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="p-10 space-y-6">
+              <CardContent className="p-10 space-y-6 flex-1">
                 {languages.map((lang) => (
                   <div key={lang.name} className="flex items-center justify-between border-b border-slate-100 pb-5 last:border-0 last:pb-0">
                     <span className="font-black text-slate-900 uppercase tracking-tight text-lg">{lang.name}</span>
@@ -226,14 +231,14 @@ export function HomePage() {
                 ))}
               </CardContent>
             </Card>
-            <Card className="border-none shadow-soft overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-[2rem]">
+            <Card className="border-none shadow-soft overflow-hidden group hover:shadow-2xl transition-all duration-500 rounded-[2rem] flex flex-col">
               <CardHeader className="bg-blue-800 text-white py-8 px-10">
                 <div className="flex items-center gap-4">
                   <Heart className="w-7 h-7" />
                   <CardTitle className="text-xl font-black uppercase tracking-widest">Interests</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="p-10">
+              <CardContent className="p-10 flex-1">
                 <div className="flex flex-wrap gap-4">
                   {interests.map((interest) => (
                     <div key={interest.name} className="flex items-center gap-3 bg-slate-50 px-6 py-3 rounded-full text-slate-800 font-bold uppercase tracking-widest text-xs border border-slate-100 hover:bg-white hover:border-blue-500 transition-all">
@@ -280,18 +285,18 @@ export function HomePage() {
       <footer className="bg-slate-950 py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-slate-300 text-sm font-bold uppercase tracking-widest">
-            <div className="flex flex-col items-center gap-6 group">
+            <a href={`mailto:${contact.email}`} className="flex flex-col items-center gap-6 group">
               <div className="p-4 bg-white/5 rounded-full group-hover:bg-blue-900 transition-colors">
                 <Mail className="w-6 h-6 text-blue-400" />
               </div>
-              <span className="text-slate-200">{contact.email}</span>
-            </div>
-            <div className="flex flex-col items-center gap-6 group">
+              <span className="text-slate-200 border-b border-transparent group-hover:border-blue-400">{contact.email}</span>
+            </a>
+            <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="flex flex-col items-center gap-6 group">
               <div className="p-4 bg-white/5 rounded-full group-hover:bg-blue-900 transition-colors">
                 <Phone className="w-6 h-6 text-blue-400" />
               </div>
-              <span className="text-slate-200">{contact.phone}</span>
-            </div>
+              <span className="text-slate-200 border-b border-transparent group-hover:border-blue-400">{contact.phone}</span>
+            </a>
             <div className="flex flex-col items-center gap-6 group">
               <div className="p-4 bg-white/5 rounded-full group-hover:bg-blue-900 transition-colors">
                 <MapPin className="w-6 h-6 text-blue-400" />

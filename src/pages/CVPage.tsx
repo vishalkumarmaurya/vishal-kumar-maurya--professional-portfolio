@@ -2,7 +2,7 @@ import React from "react";
 import { portfolioData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Printer, ArrowLeft } from "lucide-react";
+import { Mail, Phone, MapPin, Printer, ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 export function CVPage() {
   const {
@@ -44,14 +44,14 @@ export function CVPage() {
             <p className="text-xl sm:text-2xl text-blue-700 font-black mt-3 uppercase tracking-[0.15em]">{title}</p>
           </div>
           <div className="mt-8 md:mt-0 text-[13px] text-slate-700 space-y-2.5 md:text-right shrink-0">
-            <p className="flex items-center md:justify-end gap-3">
+            <a href={`mailto:${contact.email}`} className="flex items-center md:justify-end gap-3 hover:text-blue-700 transition-colors">
               <span className="font-bold text-slate-950">{contact.email}</span>
               <Mail size={16} className="text-slate-400 shrink-0" />
-            </p>
-            <p className="flex items-center md:justify-end gap-3">
+            </a>
+            <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="flex items-center md:justify-end gap-3 hover:text-blue-700 transition-colors">
               <span className="font-bold text-slate-950">{contact.phone}</span>
               <Phone size={16} className="text-slate-400 shrink-0" />
-            </p>
+            </a>
             <p className="flex items-center md:justify-end gap-3 text-right">
               <span className="font-bold text-slate-950 text-pretty max-w-[240px]">{contact.address}</span>
               <MapPin size={16} className="text-slate-400 shrink-0" />
@@ -141,9 +141,9 @@ export function CVPage() {
                         href={cert.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-black text-slate-950 uppercase tracking-tight hover:text-blue-700 hover:underline transition-colors"
+                        className="font-black text-slate-950 uppercase tracking-tight hover:text-blue-700 flex items-center gap-1 group/link"
                       >
-                        {cert.name}
+                        {cert.name} <ExternalLink size={10} className="print:hidden opacity-0 group-hover/link:opacity-100 transition-opacity" />
                       </a>
                     ) : (
                       <span className="font-black text-slate-950 uppercase tracking-tight">{cert.name}</span>
@@ -156,11 +156,12 @@ export function CVPage() {
           </section>
           <section className="print:break-inside-avoid">
             <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Research</h2>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {researchAndPublications.map((pub, index) => (
-                <div key={index} className="text-[14px]">
+                <div key={index} className="text-[14px] pb-6 border-b border-slate-50 last:border-0 last:pb-0">
                   <p className="font-black text-slate-950 uppercase tracking-tight leading-snug">{pub.title}</p>
                   <p className="text-blue-700 uppercase text-[10px] font-black tracking-[0.3em] mt-2">{pub.journal}</p>
+                  <a href={pub.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black uppercase text-blue-700 hover:underline mt-2 inline-block print:hidden">Verify Publication</a>
                 </div>
               ))}
             </div>

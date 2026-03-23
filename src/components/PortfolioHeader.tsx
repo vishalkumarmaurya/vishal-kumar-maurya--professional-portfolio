@@ -27,8 +27,8 @@ export function PortfolioHeader() {
           to={link.to}
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          offset={-80}
+          duration={600}
           className="cursor-pointer text-xs font-bold uppercase tracking-widest text-portfolio-primary/60 transition-all hover:text-portfolio-primary hover:drop-shadow-[0_0_8px_rgba(30,64,175,0.3)] pb-1 border-b-2 border-transparent"
           activeClass="!text-portfolio-primary !border-portfolio-primary"
         >
@@ -52,9 +52,9 @@ export function PortfolioHeader() {
             to="hero"
             spy={true}
             smooth={true}
-            offset={-70}
-            duration={500}
-            className="cursor-pointer text-lg sm:text-xl md:text-2xl font-black font-display text-slate-950 tracking-tighter leading-tight"
+            offset={-100}
+            duration={600}
+            className="cursor-pointer text-lg sm:text-xl md:text-2xl font-black font-display text-slate-950 tracking-tighter leading-tight hover:text-blue-700 hover:scale-[1.02] transition-all"
           >
             Vishal Kumar Maurya
           </Link>
@@ -68,7 +68,7 @@ export function PortfolioHeader() {
                   <Menu className="h-6 w-6 text-slate-950" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] border-l border-slate-100">
+              <SheetContent side="right" className="w-[300px] border-l border-slate-100 bg-white/95 backdrop-blur-xl">
                 <nav className="flex flex-col items-center space-y-8 mt-16">
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.name}>
@@ -77,8 +77,8 @@ export function PortfolioHeader() {
                         spy={true}
                         smooth={true}
                         offset={-70}
-                        duration={500}
-                        className="cursor-pointer text-xl font-black uppercase tracking-widest text-slate-400 transition-colors hover:text-portfolio-primary"
+                        duration={600}
+                        className="cursor-pointer text-xl font-black font-display uppercase tracking-tighter text-slate-400 transition-colors hover:text-portfolio-primary"
                         activeClass="text-portfolio-primary"
                       >
                         {link.name}

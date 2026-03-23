@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 export const portfolioData = {
   name: "Vishal Kumar Maurya",
-  title: "Aspiring Agri-Tech Innovator",
+  title: "Agriculture & Supply Chain Specialist",
   careerObjective:
-    "Motivated and detail-oriented undergraduate student pursuing a B.Sc. (Hons) in Agriculture at Bundelkhand University, Jhansi (Expected Graduation: Aug 2026). Dedicated to developing a strong foundation in agricultural science and technology. Seeking opportunities for internships and professional roles to gain field experience, enhance technical knowledge, and contribute to the agricultural sector’s growth.",
+    "Detail-oriented B.Sc. (Hons) Agriculture graduate (Expected Aug 2026) from Bundelkhand University, Jhansi, passionate about Agriculture and Logistics & Supply Chain Management. Seeking entry-level roles or internships to apply agricultural knowledge in efficient supply chain operations, agri-logistics, post-harvest management, and sustainable farming supply networks. Eager to contribute to India's agri-value chain transformation through innovative supply solutions.",
   contact: {
     phone: "+91 7991660085",
     email: "vishalkumarmaurya913@gmail.com",

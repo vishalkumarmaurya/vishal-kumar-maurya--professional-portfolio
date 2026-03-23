@@ -185,7 +185,7 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
-        {/* Research - Light Mode Transition */}
+        {/* Research */}
         <PortfolioSection id="research" title="Research" className="bg-gradient-to-b from-sky-50/50 to-white">
           <div className="max-w-4xl mx-auto space-y-8">
             {researchAndPublications.map((pub, index) => (
@@ -251,7 +251,7 @@ export function HomePage() {
             </Card>
           </div>
         </PortfolioSection>
-        {/* Contact Section - Light Mode Transition */}
+        {/* Contact Section */}
         <PortfolioSection id="contact" title="Contact" className="bg-sky-50/50 relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#1e40af_1.5px,transparent_1.5px)] [background-size:50px_50px]" />
           <div className="max-w-3xl mx-auto text-center relative z-10">
@@ -264,14 +264,14 @@ export function HomePage() {
                   <Mail className="w-8 h-8" /> Message Me
                 </a>
               </Button>
-              <div className="flex justify-center gap-12">
+              <div className="flex justify-center gap-8 md:gap-12">
                 {contact.social.map(social => (
                   <a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-blue-700 transition-all hover:scale-125 hover:rotate-6"
+                    className="text-slate-400 hover:text-blue-700 transition-all hover:scale-110 hover:rotate-6"
                     aria-label={social.name}
                   >
                     <social.icon className="w-12 h-12" />
@@ -282,10 +282,10 @@ export function HomePage() {
           </div>
         </PortfolioSection>
       </main>
-      {/* Footer - Maintained as High Contrast */}
+      {/* Footer */}
       <footer className="bg-slate-950 py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-slate-300 text-sm font-bold uppercase tracking-widest">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 text-center text-slate-300 text-sm font-bold uppercase tracking-widest">
             <a href={`mailto:${contact.email}`} className="flex flex-col items-center gap-6 group">
               <div className="p-4 bg-white/5 rounded-full group-hover:bg-blue-900 transition-colors">
                 <Mail className="w-6 h-6 text-blue-400" />
@@ -306,7 +306,7 @@ export function HomePage() {
             </div>
           </div>
           <div className="mt-24 pt-12 border-t border-white/5 flex flex-col items-center gap-8">
-            <p className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-400">
+            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 text-center">
               © {new Date().getFullYear()} {name} • {title}
             </p>
           </div>

@@ -36,7 +36,7 @@ export const portfolioData = {
     {
       role: "Summer Internship",
       company: "Indian Chamber of Food and Agriculture (ICFA)",
-      duration: "Mar 2024 – May 2024",
+      duration: "2024 – 2024",
       description:
         "Conducted research on agricultural subsidy programs and related government policies. Developed understanding of food and agriculture sector frameworks. Gained experience in report writing and virtual teamwork.",
       icon: Briefcase,
@@ -46,7 +46,7 @@ export const portfolioData = {
     {
       degree: "Bachelor of Science (Hons) in Agriculture",
       institution: "Bundelkhand University, Jhansi",
-      duration: "2022 – 2026 (Expected)",
+      duration: "2022 – 2026",
       description:
         "Engaged in experiential learning programs and agricultural extension activities. Active participant in NSS camp and field-based learning.",
       icon: GraduationCap,
@@ -161,6 +161,7 @@ export const portfolioData = {
   ],
   interests: [
     { name: "Sustainable Farming", icon: Heart },
+    { name: "Agri-Logistics", icon: Heart },
     { name: "Tech Gadgets", icon: Heart },
     { name: "Rural Development", icon: Heart },
     { name: "Agriculture Extension", icon: Heart },

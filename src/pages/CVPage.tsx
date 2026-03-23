@@ -25,7 +25,7 @@ export function CVPage() {
     return url.replace(/^https?:\/\/(www\.)?/, "");
   };
   return (
-    <div className="bg-slate-50 min-h-screen p-0 sm:p-12 print:p-0 print:bg-white font-sans">
+    <div className="bg-slate-50 min-h-screen p-6 sm:p-12 print:p-0 print:bg-white font-sans">
       {/* Utility Navigation Bar */}
       <div className="max-w-4xl mx-auto mb-8 flex items-center justify-between px-4 sm:px-0 print:hidden">
         <Button asChild variant="ghost" className="text-slate-600 hover:bg-slate-200 font-bold uppercase tracking-widest text-xs">
@@ -72,7 +72,7 @@ export function CVPage() {
             </div>
           </div>
         </header>
-        <main className="space-y-12">
+        <main className="space-y-10">
           <section className="print:break-inside-avoid">
             <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Profile</h2>
             <p className="text-slate-800 leading-relaxed font-medium text-[15px] whitespace-pre-line">{careerObjective}</p>
@@ -131,7 +131,7 @@ export function CVPage() {
           </div>
           <section className="print:break-inside-avoid">
             <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Certifications</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
               {certifications.map((cert, index) => (
                 <div key={index} className="flex items-start gap-3 text-[13px] leading-tight group">
                   <div className="w-2 h-2 rounded-full bg-blue-700 mt-1.5 shrink-0" />
@@ -156,9 +156,9 @@ export function CVPage() {
           </section>
           <section className="print:break-inside-avoid">
             <h2 className="text-xs font-black text-slate-400 uppercase tracking-[0.25em] mb-6 border-b border-slate-100 pb-2">Research</h2>
-            <div className="space-y-8">
+            <div className="space-y-6">
               {researchAndPublications.map((pub, index) => (
-                <div key={index} className="text-[14px] pb-6 border-b border-slate-50 last:border-0 last:pb-0">
+                <div key={index} className="text-[13px] pb-6 border-b border-slate-50 last:border-0 last:pb-0">
                   <p className="font-black text-slate-950 uppercase tracking-tight leading-snug">{pub.title}</p>
                   <p className="text-blue-700 uppercase text-[10px] font-black tracking-[0.3em] mt-2">{pub.journal}</p>
                   <a href={pub.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black uppercase text-blue-700 hover:underline mt-2 inline-block print:hidden">Verify Publication</a>
@@ -190,7 +190,7 @@ export function CVPage() {
             </section>
           </div>
         </main>
-        <footer className="mt-20 pt-10 border-t border-slate-100 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400">
+        <footer className="mt-12 pt-10 border-t border-slate-100 text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400">
           Professional CV • {name} • {new Date().getFullYear()}
         </footer>
       </div>

@@ -29,7 +29,7 @@ export function PortfolioHeader() {
           smooth={true}
           offset={-80}
           duration={600}
-          className="cursor-pointer text-xs font-bold uppercase tracking-widest text-portfolio-primary/60 transition-all hover:text-portfolio-primary hover:drop-shadow-[0_0_8px_rgba(30,64,175,0.3)] pb-1 border-b-2 border-transparent"
+          className="cursor-pointer text-[10px] lg:text-xs font-bold uppercase tracking-[0.2em] text-portfolio-primary/60 transition-all hover:text-portfolio-primary hover:drop-shadow-[0_0_8px_rgba(30,64,175,0.3)] pb-1 border-b-2 border-transparent"
           activeClass="!text-portfolio-primary !border-portfolio-primary"
         >
           {link.name}
@@ -42,26 +42,18 @@ export function PortfolioHeader() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         hasScrolled
-          ? "bg-white/90 shadow-sm backdrop-blur-md border-b border-slate-200/50 h-16"
+          ? "bg-white/95 shadow-sm backdrop-blur-md border-b border-slate-200/50 h-16"
           : "bg-transparent h-20"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex items-center justify-between h-full">
-          <Link
-            to="hero"
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={600}
-            className="cursor-pointer text-lg sm:text-xl md:text-2xl font-black font-display text-slate-950 tracking-tighter leading-tight hover:text-blue-700 hover:scale-[1.02] transition-all"
-          >
-            Vishal Kumar Maurya
-          </Link>
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <div className="flex items-center justify-center md:justify-center h-full relative">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
             <NavLinksContent />
           </nav>
-          <div className="md:hidden">
+          {/* Mobile Layout - Trigger on the right */}
+          <div className="md:hidden absolute right-0">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="hover:bg-slate-100">

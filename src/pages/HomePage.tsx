@@ -170,10 +170,10 @@ export function HomePage() {
                   <div className="mt-6 pt-6 border-t border-slate-50 flex items-center justify-between">
                     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{cert.issuer}</p>
                     {cert.url && (
-                      <a 
-                        href={cert.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={cert.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-blue-700 hover:text-blue-900 transition-colors group/link"
                       >
                         Verify <ExternalLink className="w-3 h-3 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
@@ -185,20 +185,20 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
-        {/* Research */}
-        <PortfolioSection id="research" title="Research" className="bg-slate-950 text-white" titleClassName="text-white">
+        {/* Research - Light Mode Transition */}
+        <PortfolioSection id="research" title="Research" className="bg-gradient-to-b from-sky-50/50 to-white">
           <div className="max-w-4xl mx-auto space-y-8">
             {researchAndPublications.map((pub, index) => (
-              <Card key={index} className="bg-white/5 border border-white/10 shadow-none group hover:bg-white/10 transition-all duration-300 rounded-3xl">
+              <Card key={index} className="bg-white border border-slate-100 shadow-soft group hover:shadow-xl transition-all duration-300 rounded-3xl overflow-hidden">
                 <CardContent className="p-10">
                   <div className="flex flex-col sm:flex-row gap-8 items-start">
-                    <div className="p-5 bg-white/10 rounded-2xl group-hover:scale-110 transition-transform hidden sm:block">
-                      <FileText className="w-10 h-10 text-blue-300" />
+                    <div className="p-5 bg-slate-50 rounded-2xl group-hover:bg-blue-50 transition-colors hidden sm:block">
+                      <FileText className="w-10 h-10 text-slate-950 group-hover:text-blue-700" />
                     </div>
                     <div className="space-y-4 flex-1">
-                      <h4 className="text-2xl md:text-3xl font-black leading-snug tracking-tight uppercase text-white">{pub.title}</h4>
-                      <p className="text-blue-300 font-black tracking-[0.3em] uppercase text-xs">{pub.journal}</p>
-                      <Button asChild variant="link" className="p-0 h-auto text-blue-300 font-black uppercase text-sm tracking-widest hover:no-underline hover:text-white transition-colors">
+                      <h4 className="text-2xl md:text-3xl font-black leading-snug tracking-tight uppercase text-slate-950">{pub.title}</h4>
+                      <p className="text-blue-700 font-black tracking-[0.3em] uppercase text-xs">{pub.journal}</p>
+                      <Button asChild variant="link" className="p-0 h-auto text-blue-700 font-black uppercase text-sm tracking-widest hover:no-underline hover:text-blue-900 transition-colors">
                         <a href={pub.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                           View Work <ExternalLink className="w-4 h-4" />
                         </a>
@@ -251,15 +251,15 @@ export function HomePage() {
             </Card>
           </div>
         </PortfolioSection>
-        {/* Contact Section */}
-        <PortfolioSection id="contact" title="Contact" className="bg-slate-950 text-white relative overflow-hidden" titleClassName="text-white">
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#1e40af_1.5px,transparent_1.5px)] [background-size:50px_50px]" />
+        {/* Contact Section - Light Mode Transition */}
+        <PortfolioSection id="contact" title="Contact" className="bg-sky-50/50 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#1e40af_1.5px,transparent_1.5px)] [background-size:50px_50px]" />
           <div className="max-w-3xl mx-auto text-center relative z-10">
-            <p className="text-slate-200 text-xl md:text-2xl mb-16 font-medium leading-relaxed">
+            <p className="text-slate-600 text-xl md:text-2xl mb-16 font-medium leading-relaxed">
               Seeking opportunities to innovate within the agricultural value chain. Let's start a conversation.
             </p>
             <div className="space-y-16">
-              <Button asChild size="lg" className="bg-white hover:bg-blue-50 text-slate-950 rounded-full px-16 h-20 text-2xl font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(255,255,255,0.1)]">
+              <Button asChild size="lg" className="bg-slate-950 hover:bg-blue-900 text-white rounded-full px-16 h-20 text-2xl font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl">
                 <a href={`mailto:${contact.email}`} className="flex items-center gap-6">
                   <Mail className="w-8 h-8" /> Message Me
                 </a>
@@ -271,7 +271,7 @@ export function HomePage() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-300 hover:text-white transition-all hover:scale-125 hover:rotate-6"
+                    className="text-slate-400 hover:text-blue-700 transition-all hover:scale-125 hover:rotate-6"
                     aria-label={social.name}
                   >
                     <social.icon className="w-12 h-12" />
@@ -282,6 +282,7 @@ export function HomePage() {
           </div>
         </PortfolioSection>
       </main>
+      {/* Footer - Maintained as High Contrast */}
       <footer className="bg-slate-950 py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-slate-300 text-sm font-bold uppercase tracking-widest">

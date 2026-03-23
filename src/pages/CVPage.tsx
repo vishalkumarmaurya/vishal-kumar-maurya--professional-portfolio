@@ -46,13 +46,13 @@ export function CVPage() {
           <div className="mt-6 md:mt-0 text-[13px] text-slate-600 space-y-2 md:text-right shrink-0">
             <p className="flex items-center md:justify-end gap-2">
               <span className="font-semibold text-slate-900">{contact.email}</span>
-              <Mail size={14} className="text-slate-400" />
+              <Mail size={14} className="text-slate-400 shrink-0" />
             </p>
             <p className="flex items-center md:justify-end gap-2">
               <span className="font-semibold text-slate-900">{contact.phone}</span>
-              <Phone size={14} className="text-slate-400" />
+              <Phone size={14} className="text-slate-400 shrink-0" />
             </p>
-            <p className="flex items-center md:justify-end gap-2">
+            <p className="flex items-center md:justify-end gap-2 text-right">
               <span className="font-semibold text-slate-900 text-pretty max-w-[220px]">{contact.address}</span>
               <MapPin size={14} className="text-slate-400 shrink-0" />
             </p>
@@ -65,7 +65,7 @@ export function CVPage() {
                   rel="noopener noreferrer"
                   className="flex items-center md:justify-end gap-2 text-xs font-black uppercase text-blue-700 hover:text-blue-800 transition-colors group w-full"
                 >
-                  <span className="truncate max-w-[200px] print:max-w-none">{formatUrl(social.url)}</span>
+                  <span className="truncate max-w-[180px] print:max-w-none">{formatUrl(social.url)}</span>
                   <social.icon size={14} className="text-slate-400 group-hover:text-blue-700 shrink-0" />
                 </a>
               ))}
@@ -75,7 +75,7 @@ export function CVPage() {
         <main className="space-y-10">
           <section className="print:break-inside-avoid">
             <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Profile Summary</h2>
-            <p className="text-slate-700 leading-relaxed font-normal">{careerObjective}</p>
+            <p className="text-slate-700 leading-relaxed font-normal text-[14px]">{careerObjective}</p>
           </section>
           <section>
             <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Experience</h2>
@@ -133,7 +133,7 @@ export function CVPage() {
             <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Certifications</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
               {certifications.map((cert, index) => (
-                <div key={index} className="flex items-start gap-2 text-sm leading-tight">
+                <div key={index} className="flex items-start gap-2 text-[13px] leading-tight">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0" />
                   <p className="flex-1">
                     <span className="font-bold text-slate-900">{cert.name}</span>
@@ -147,7 +147,7 @@ export function CVPage() {
             <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Research</h2>
             <div className="space-y-5">
               {researchAndPublications.map((pub, index) => (
-                <div key={index} className="text-sm">
+                <div key={index} className="text-[13.5px]">
                   <p className="font-bold text-slate-900 leading-snug">{pub.title}</p>
                   <p className="text-slate-500 italic uppercase text-[10px] font-bold tracking-widest mt-1">{pub.journal}</p>
                 </div>

@@ -214,6 +214,49 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
+        {/* Personal Details Section */}
+        <PortfolioSection id="personal" title="Personal Details" className="bg-slate-50">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Languages Card */}
+            <Card className="border-none shadow-soft overflow-hidden group hover:shadow-xl transition-all duration-500">
+              <CardHeader className="bg-blue-700 text-white py-6">
+                <div className="flex items-center gap-3">
+                  <Languages className="w-6 h-6" />
+                  <CardTitle className="text-xl font-bold">Languages</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="p-8 space-y-4">
+                {languages.map((lang) => (
+                  <div key={lang.name} className="flex items-center justify-between border-b border-slate-100 pb-3 last:border-0 last:pb-0">
+                    <span className="font-bold text-slate-800">{lang.name}</span>
+                    <Badge variant="outline" className="border-blue-100 text-blue-700 font-semibold px-3">
+                      {lang.proficiency}
+                    </Badge>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+            {/* Interests Card */}
+            <Card className="border-none shadow-soft overflow-hidden group hover:shadow-xl transition-all duration-500">
+              <CardHeader className="bg-emerald-600 text-white py-6">
+                <div className="flex items-center gap-3">
+                  <Heart className="w-6 h-6" />
+                  <CardTitle className="text-xl font-bold">Interests & Hobbies</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="p-8">
+                <div className="flex flex-wrap gap-3">
+                  {interests.map((interest) => (
+                    <div key={interest.name} className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full text-slate-700 font-medium border border-slate-200 hover:bg-white hover:border-emerald-300 transition-colors">
+                      <interest.icon className="w-4 h-4 text-emerald-600" />
+                      {interest.name}
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </PortfolioSection>
         {/* Contact Section */}
         <PortfolioSection id="contact" title="Get In Touch" className="bg-slate-950 text-white relative overflow-hidden" titleClassName="text-white">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:40px_40px]" />
@@ -264,7 +307,7 @@ export function HomePage() {
               <div className="p-3 bg-white/5 rounded-full">
                 <MapPin className="w-5 h-5 text-blue-500" />
               </div>
-              <span className="max-w-[200px]">{contact.address}</span>
+              <span className="max-w-[200px] text-pretty">{contact.address}</span>
             </div>
           </div>
           <div className="mt-20 pt-10 border-t border-white/5 flex flex-col items-center gap-6">

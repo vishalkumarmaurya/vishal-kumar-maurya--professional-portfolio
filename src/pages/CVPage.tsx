@@ -34,7 +34,7 @@ export function CVPage() {
           </Link>
         </Button>
         <Button onClick={handlePrint} className="bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors px-6 shadow-lg">
-          <Printer className="w-4 h-4 mr-2" /> Print PDF
+          <Printer className="w-4 h-4 mr-2" /> Download PDF / Print
         </Button>
       </div>
       <div className="max-w-4xl mx-auto bg-white shadow-xl print:shadow-none p-8 sm:p-12 print:p-0 font-sans text-slate-800 border-t-[12px] border-slate-900 print:border-t-8">
@@ -74,11 +74,11 @@ export function CVPage() {
         </header>
         <main className="space-y-10">
           <section className="print:break-inside-avoid">
-            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Career Objective</h2>
-            <p className="text-slate-700 leading-relaxed font-normal whitespace-pre-line">{careerObjective}</p>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Profile Summary</h2>
+            <p className="text-slate-700 leading-relaxed font-normal">{careerObjective}</p>
           </section>
           <section>
-            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Work Experience</h2>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-6 border-b border-slate-100 pb-2">Experience</h2>
             <div className="space-y-8">
               {workExperience.map((job, index) => (
                 <div key={index} className="print:break-inside-avoid">
@@ -87,7 +87,7 @@ export function CVPage() {
                     <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{job.duration}</span>
                   </div>
                   <p className="text-md font-bold text-blue-700 mb-2">{job.role}</p>
-                  <p className="text-slate-600 leading-relaxed text-[13.5px] whitespace-pre-line">{job.description}</p>
+                  <p className="text-slate-600 leading-relaxed text-[13.5px]">{job.description}</p>
                 </div>
               ))}
             </div>
@@ -102,14 +102,14 @@ export function CVPage() {
                     <span className="text-[11px] font-black text-slate-500 uppercase shrink-0 pt-1">{edu.duration}</span>
                   </div>
                   <p className="text-md font-bold text-blue-700 mb-2">{edu.degree}</p>
-                  <p className="text-slate-600 leading-relaxed text-[13.5px] whitespace-pre-line">{edu.description}</p>
+                  <p className="text-slate-600 leading-relaxed text-[13.5px]">{edu.description}</p>
                 </div>
               ))}
             </div>
           </section>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <section className="print:break-inside-avoid">
-              <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Technical Proficiencies</h2>
+              <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Technical Skills</h2>
               <div className="flex flex-wrap gap-2">
                 {skills.technical.map((skill) => (
                   <Badge key={skill.name} variant="outline" className="border-slate-200 text-slate-700 font-bold uppercase text-[10px] py-1 px-3">
@@ -136,14 +136,7 @@ export function CVPage() {
                 <div key={index} className="flex items-start gap-2 text-sm leading-tight">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0" />
                   <p className="flex-1">
-                    {cert.url ? (
-                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition-colors inline-flex items-center gap-1 group">
-                        <span className="font-bold text-slate-900 group-hover:text-blue-700">{cert.name}</span>
-                        <ExternalLink size={10} className="text-slate-400 group-hover:text-blue-700 print:hidden" />
-                      </a>
-                    ) : (
-                      <span className="font-bold text-slate-900">{cert.name}</span>
-                    )}
+                    <span className="font-bold text-slate-900">{cert.name}</span>
                     <span className="text-slate-500 font-medium"> — {cert.issuer}</span>
                   </p>
                 </div>
@@ -151,21 +144,11 @@ export function CVPage() {
             </div>
           </section>
           <section className="print:break-inside-avoid">
-            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Research & Publications</h2>
+            <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Research</h2>
             <div className="space-y-5">
               {researchAndPublications.map((pub, index) => (
                 <div key={index} className="text-sm">
-                  <div className="flex items-start justify-between gap-4">
-                    <a
-                      href={pub.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold text-slate-900 hover:text-blue-700 leading-snug flex-1 transition-colors group flex items-start gap-2"
-                    >
-                      <span className="flex-1">{pub.title}</span>
-                      <ExternalLink size={12} className="text-slate-400 group-hover:text-blue-700 mt-1 shrink-0 print:hidden" />
-                    </a>
-                  </div>
+                  <p className="font-bold text-slate-900 leading-snug">{pub.title}</p>
                   <p className="text-slate-500 italic uppercase text-[10px] font-bold tracking-widest mt-1">{pub.journal}</p>
                 </div>
               ))}
@@ -187,8 +170,8 @@ export function CVPage() {
               <h2 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-100 pb-2">Interests</h2>
               <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                 {interests.map((interest) => (
-                  <span key={interest.name} className="text-sm font-bold text-slate-700 flex items-center gap-1.5">
-                    <span className="text-blue-600">•</span> {interest.name}
+                  <span key={interest.name} className="text-sm font-bold text-slate-700">
+                    {interest.name}
                   </span>
                 ))}
               </div>
@@ -196,7 +179,7 @@ export function CVPage() {
           </div>
         </main>
         <footer className="mt-16 pt-8 border-t border-slate-100 text-center text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
-          Generated Professional CV • {name} • {new Date().getFullYear()}
+          Professional CV • {name} • {new Date().getFullYear()}
         </footer>
       </div>
     </div>

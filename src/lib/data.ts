@@ -85,7 +85,7 @@ export const portfolioData = {
   certifications: [
     {
       name: "Fumigation of Agricultural Commodities",
-      issuer: "MANAGE (National Institute of Agricultural Extension Management)",
+      issuer: "MANAGE",
       year: "2024",
       url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-fumigation-manage-activity-7337734066114334720-a-0X",
       icon: Award,
@@ -105,7 +105,7 @@ export const portfolioData = {
       icon: Award,
     },
     {
-      name: "Agriculture 4.0: The Future of Farming Technology",
+      name: "Agriculture 4.0: The Future of Farming",
       issuer: "Just Agriculture Magazine",
       year: "2023",
       url: "https://www.linkedin.com/posts/vishalkmaurya_agriculture-agripreneurship-futureoffarming-activity-7054733364754268160-IfYI",

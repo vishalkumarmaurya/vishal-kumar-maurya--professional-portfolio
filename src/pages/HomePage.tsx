@@ -18,8 +18,6 @@ import {
   ArrowRight,
   ExternalLink,
   FileText,
-  Linkedin,
-  Github
 } from "lucide-react";
 import { motion } from "framer-motion";
 export function HomePage() {
@@ -43,7 +41,7 @@ export function HomePage() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-100 border-b border-blue-100/50"
+          className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-100 border-b border-blue-100/50"
         >
           <div className="absolute inset-0 z-0 opacity-[0.03] bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:32px_32px]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-20">
@@ -82,27 +80,26 @@ export function HomePage() {
               </Button>
               <Button asChild size="lg" variant="ghost" className="text-blue-700 hover:bg-blue-50 hover:text-blue-800 transition-all duration-300 rounded-full h-14 px-10 text-lg group">
                 <RouterLink to="/cv" className="flex items-center gap-2">
-                  Professional CV <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  View Professional CV <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </RouterLink>
               </Button>
             </motion.div>
           </div>
         </section>
-        {/* Career Objective Section */}
-        <PortfolioSection id="about" title="Career Objective" className="bg-white">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-center text-lg md:text-xl leading-relaxed text-slate-700 font-normal whitespace-pre-line tracking-tight">
+        {/* Career Objective */}
+        <PortfolioSection id="about" title="About Me" className="bg-white">
+          <div className="max-w-3xl mx-auto bg-blue-50/30 p-8 md:p-12 rounded-3xl border border-blue-100/50">
+            <p className="text-center text-lg md:text-xl leading-relaxed text-slate-700 font-normal tracking-tight">
               {careerObjective}
             </p>
           </div>
         </PortfolioSection>
         {/* Experience Section */}
-        <PortfolioSection id="experience" title="Experience" className="bg-blue-50/50">
+        <PortfolioSection id="experience" title="Professional Experience" className="bg-slate-50/50">
           <div className="max-w-4xl mx-auto space-y-8">
             {workExperience.map((job, index) => (
               <Card key={index} className="border-none shadow-soft hover:shadow-lg transition-all duration-500 overflow-hidden group">
                 <CardHeader className="pb-4 relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100/20 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-700" />
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 relative z-10">
                     <div className="flex items-start gap-5">
                       <div className="p-3 bg-blue-700 rounded-2xl shrink-0 shadow-lg shadow-blue-100">
@@ -119,7 +116,7 @@ export function HomePage() {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-2 relative z-10">
-                  <p className="text-slate-600 leading-relaxed border-t border-slate-100 pt-6 whitespace-pre-line text-lg">
+                  <p className="text-slate-600 leading-relaxed border-t border-slate-100 pt-6 text-lg">
                     {job.description}
                   </p>
                 </CardContent>
@@ -127,8 +124,8 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
-        {/* Academic Path Section */}
-        <PortfolioSection id="education" title="Academic Path" className="bg-white">
+        {/* Academic Path */}
+        <PortfolioSection id="education" title="Academic Background" className="bg-white">
           <div className="max-w-4xl mx-auto space-y-12">
             {education.map((edu, index) => (
               <div key={index} className="relative pl-10 border-l-4 border-blue-100 py-2 last:pb-0 group">
@@ -136,17 +133,17 @@ export function HomePage() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-1 group-hover:text-blue-700 transition-colors">{edu.institution}</h3>
                 <p className="text-lg text-blue-700 font-semibold mb-2">{edu.degree}</p>
                 <p className="text-xs font-black text-slate-400 uppercase tracking-[0.2em] mb-4">{edu.duration}</p>
-                <p className="text-slate-600 leading-relaxed max-w-2xl text-lg whitespace-pre-line">{edu.description}</p>
+                <p className="text-slate-600 leading-relaxed max-w-2xl text-lg">{edu.description}</p>
               </div>
             ))}
           </div>
         </PortfolioSection>
         {/* Skills Section */}
-        <PortfolioSection id="skills" title="Skills & Competencies" className="bg-slate-50">
+        <PortfolioSection id="skills" title="Expertise & Skills" className="bg-slate-50">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
             {[
-              { title: "Technical Expertise", icon: Cpu, items: skills.technical, color: "bg-blue-700" },
-              { title: "Interpersonal Skills", icon: Users, items: skills.soft, color: "bg-emerald-600" }
+              { title: "Technical Proficiency", icon: Cpu, items: skills.technical, color: "bg-blue-700" },
+              { title: "Soft Skills", icon: Users, items: skills.soft, color: "bg-emerald-600" }
             ].map((skillGroup, idx) => (
               <Card key={idx} className="border-none shadow-soft overflow-hidden group hover:shadow-xl transition-shadow duration-500">
                 <div className={`${skillGroup.color} px-8 py-5 flex items-center justify-between`}>
@@ -167,7 +164,7 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
-        {/* Certifications Section */}
+        {/* Certifications */}
         <PortfolioSection id="certifications" title="Certifications" className="bg-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
@@ -186,21 +183,14 @@ export function HomePage() {
                   <h4 className="font-bold text-slate-900 mb-2 leading-tight flex-1 text-lg">{cert.name}</h4>
                   <div className="mt-4 pt-4 border-t border-slate-50">
                     <p className="text-sm font-medium text-slate-500">{cert.issuer}</p>
-                    {cert.url && (
-                      <Button asChild variant="link" className="p-0 h-auto text-xs font-bold text-blue-700 mt-2 hover:no-underline">
-                        <a href={cert.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
-                          Verify Credential <LinkIcon className="w-3 h-3" />
-                        </a>
-                      </Button>
-                    )}
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
         </PortfolioSection>
-        {/* Research Section */}
-        <PortfolioSection id="research" title="Research" className="bg-blue-900 text-white" titleClassName="text-white">
+        {/* Research */}
+        <PortfolioSection id="research" title="Research & Publications" className="bg-blue-900 text-white" titleClassName="text-white">
           <div className="max-w-4xl mx-auto space-y-6">
             {researchAndPublications.map((pub, index) => (
               <Card key={index} className="bg-white/5 border border-white/10 shadow-none group hover:bg-white/10 transition-all duration-300">
@@ -224,47 +214,12 @@ export function HomePage() {
             ))}
           </div>
         </PortfolioSection>
-        {/* Personal Details Section */}
-        <PortfolioSection id="personal" title="Personal Details" className="bg-white">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-            <Card className="border-none shadow-soft bg-indigo-50/30 overflow-hidden">
-              <CardHeader className="bg-indigo-700 text-white">
-                <CardTitle className="text-lg flex items-center gap-2"><Languages className="w-5 h-5" /> Languages</CardTitle>
-              </CardHeader>
-              <CardContent className="p-8 space-y-5">
-                {languages.map((lang) => (
-                  <div key={lang.name} className="flex items-center justify-between group">
-                    <span className="font-bold text-slate-900 group-hover:text-indigo-700 transition-colors">{lang.name}</span>
-                    <Badge variant="outline" className="text-indigo-700 border-indigo-200 font-bold uppercase text-[10px] tracking-widest">
-                      {lang.proficiency}
-                    </Badge>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-            <Card className="border-none shadow-soft bg-rose-50/30 overflow-hidden">
-              <CardHeader className="bg-rose-600 text-white">
-                <CardTitle className="text-lg flex items-center gap-2"><Heart className="w-5 h-5" /> Interests</CardTitle>
-              </CardHeader>
-              <CardContent className="p-8">
-                <div className="flex flex-wrap gap-3">
-                  {interests.map((interest) => (
-                    <div key={interest.name} className="flex items-center gap-2 bg-white px-5 py-3 rounded-2xl border border-rose-100 shadow-sm hover:scale-105 transition-transform cursor-default">
-                      <interest.icon className="w-4 h-4 text-rose-500" />
-                      <span className="text-sm font-bold text-slate-800">{interest.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </PortfolioSection>
         {/* Contact Section */}
         <PortfolioSection id="contact" title="Get In Touch" className="bg-slate-950 text-white relative overflow-hidden" titleClassName="text-white">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#1d4ed8_1px,transparent_1px)] [background-size:40px_40px]" />
           <div className="max-w-2xl mx-auto text-center relative z-10">
             <p className="text-slate-400 text-xl mb-12">
-              Open to collaborative innovations in agricultural technology and rural development.
+              Ready for high-impact collaborations in Agri-Tech. Let's build the future of farming together.
             </p>
             <div className="space-y-12">
               <Button asChild size="lg" className="bg-blue-700 hover:bg-blue-800 text-white rounded-full px-16 h-16 text-xl font-bold transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-blue-500/20">
@@ -293,20 +248,20 @@ export function HomePage() {
       <footer className="bg-slate-950 py-20 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center text-slate-400 text-sm font-medium">
-            <div className="flex flex-col items-center gap-4 group">
-              <div className="p-3 bg-white/5 rounded-full group-hover:bg-blue-700/20 transition-colors">
+            <div className="flex flex-col items-center gap-4">
+              <div className="p-3 bg-white/5 rounded-full">
                 <Mail className="w-5 h-5 text-blue-500" />
               </div>
               <span>{contact.email}</span>
             </div>
-            <div className="flex flex-col items-center gap-4 group">
-              <div className="p-3 bg-white/5 rounded-full group-hover:bg-blue-700/20 transition-colors">
+            <div className="flex flex-col items-center gap-4">
+              <div className="p-3 bg-white/5 rounded-full">
                 <Phone className="w-5 h-5 text-blue-500" />
               </div>
               <span>{contact.phone}</span>
             </div>
-            <div className="flex flex-col items-center gap-4 group">
-              <div className="p-3 bg-white/5 rounded-full group-hover:bg-blue-700/20 transition-colors">
+            <div className="flex flex-col items-center gap-4">
+              <div className="p-3 bg-white/5 rounded-full">
                 <MapPin className="w-5 h-5 text-blue-500" />
               </div>
               <span className="max-w-[200px]">{contact.address}</span>
@@ -314,13 +269,8 @@ export function HomePage() {
           </div>
           <div className="mt-20 pt-10 border-t border-white/5 flex flex-col items-center gap-6">
             <p className="text-xs font-black uppercase tracking-[0.4em] text-slate-500">
-              © {new Date().getFullYear()} {name} • All Rights Reserved
+              © {new Date().getFullYear()} {name} • Agri-Tech Professional
             </p>
-            <Button asChild variant="link" className="text-blue-500 hover:text-white transition-colors">
-              <RouterLink to="/cv" className="flex items-center gap-2">
-                Download Professional Dossier <ArrowRight size={14} />
-              </RouterLink>
-            </Button>
           </div>
         </div>
       </footer>

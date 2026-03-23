@@ -40,12 +40,12 @@ export function HomePage() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white border-b border-slate-100"
+          className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white border-b border-slate-100 py-12"
         >
           <div className="absolute inset-0 z-0 opacity-[0.03] bg-[radial-gradient(#1e40af_1.5px,transparent_1.5px)] [background-size:40px_40px]" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-16">
             <motion.h1
-              className="text-6xl md:text-8xl lg:text-[9.5rem] font-black font-display text-slate-950 tracking-tighter leading-[0.9] sm:leading-[0.95]"
+              className="text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-black font-display text-slate-950 tracking-tighter leading-[0.85] sm:leading-[0.9]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}

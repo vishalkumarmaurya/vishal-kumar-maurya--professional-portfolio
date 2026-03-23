@@ -66,7 +66,23 @@
     @apply bg-background text-foreground;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     text-rendering: optimizeLegibility;
+    @apply selection:bg-blue-100 selection:text-blue-900;
   }
+
+  /* Custom Professional Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full border-2 border-slate-50 border-solid;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-200;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
     text-wrap: balance;

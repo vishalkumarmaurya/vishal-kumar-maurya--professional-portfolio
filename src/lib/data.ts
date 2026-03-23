@@ -14,7 +14,7 @@ export const portfolioData = {
   name: "Vishal Kumar Maurya",
   title: "Agriculture & Supply Chain Specialist",
   careerObjective:
-    "Detail-oriented B.Sc. (Hons) Agriculture graduate (Expected Aug 2026) from Bundelkhand University, Jhansi, passionate about Agriculture and Logistics & Supply Chain Management. Seeking entry-level roles or internships to apply agricultural knowledge in efficient supply chain operations, agri-logistics, post-harvest management, and sustainable farming supply networks. Eager to contribute to India's agri-value chain transformation through innovative supply solutions.",
+    "Detail-oriented B.Sc. (Hons) Agriculture graduate in 2026 from Bundelkhand University, Jhansi, passionate about Agriculture and Logistics & Supply Chain Management. Seeking entry-level roles or internships to apply agricultural knowledge in efficient supply chain operations, agri-logistics, post-harvest management, and sustainable farming supply networks. Eager to contribute to India's agri-value chain transformation through innovative supply solutions.",
   contact: {
     phone: "+91 7991660085",
     email: "vishalkumarmaurya913@gmail.com",

@@ -188,12 +188,12 @@ export function HomePage() {
                 <CardContent className="p-10">
                   <div className="flex gap-8 items-start">
                     <div className="p-5 bg-white/10 rounded-2xl group-hover:scale-110 transition-transform">
-                      <FileText className="w-10 h-10 text-blue-400" />
+                      <FileText className="w-10 h-10 text-blue-300" />
                     </div>
                     <div className="space-y-4 flex-1">
-                      <h4 className="text-2xl md:text-3xl font-black leading-snug tracking-tight uppercase">{pub.title}</h4>
-                      <p className="text-blue-400 font-black tracking-[0.3em] uppercase text-xs">{pub.journal}</p>
-                      <Button asChild variant="link" className="p-0 h-auto text-blue-400 font-black uppercase text-sm tracking-widest hover:no-underline hover:text-white transition-colors">
+                      <h4 className="text-2xl md:text-3xl font-black leading-snug tracking-tight uppercase text-white">{pub.title}</h4>
+                      <p className="text-blue-300 font-black tracking-[0.3em] uppercase text-xs">{pub.journal}</p>
+                      <Button asChild variant="link" className="p-0 h-auto text-blue-300 font-black uppercase text-sm tracking-widest hover:no-underline hover:text-white transition-colors">
                         <a href={pub.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                           View Work <ExternalLink className="w-4 h-4" />
                         </a>
@@ -250,7 +250,7 @@ export function HomePage() {
         <PortfolioSection id="contact" title="Contact" className="bg-slate-950 text-white relative overflow-hidden" titleClassName="text-white">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#1e40af_1.5px,transparent_1.5px)] [background-size:50px_50px]" />
           <div className="max-w-3xl mx-auto text-center relative z-10">
-            <p className="text-slate-400 text-xl md:text-2xl mb-16 font-medium leading-relaxed">
+            <p className="text-slate-200 text-xl md:text-2xl mb-16 font-medium leading-relaxed">
               Seeking opportunities to innovate within the agricultural value chain. Let's start a conversation.
             </p>
             <div className="space-y-16">
@@ -266,7 +266,7 @@ export function HomePage() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-500 hover:text-white transition-all hover:scale-125 hover:rotate-6"
+                    className="text-slate-300 hover:text-white transition-all hover:scale-125 hover:rotate-6"
                     aria-label={social.name}
                   >
                     <social.icon className="w-12 h-12" />
@@ -279,28 +279,28 @@ export function HomePage() {
       </main>
       <footer className="bg-slate-950 py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-slate-500 text-sm font-bold uppercase tracking-widest">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center text-slate-300 text-sm font-bold uppercase tracking-widest">
             <div className="flex flex-col items-center gap-6 group">
               <div className="p-4 bg-white/5 rounded-full group-hover:bg-blue-900 transition-colors">
-                <Mail className="w-6 h-6 text-blue-500" />
+                <Mail className="w-6 h-6 text-blue-400" />
               </div>
-              <span className="text-slate-300">{contact.email}</span>
+              <span className="text-slate-200">{contact.email}</span>
             </div>
             <div className="flex flex-col items-center gap-6 group">
               <div className="p-4 bg-white/5 rounded-full group-hover:bg-blue-900 transition-colors">
-                <Phone className="w-6 h-6 text-blue-500" />
+                <Phone className="w-6 h-6 text-blue-400" />
               </div>
-              <span className="text-slate-300">{contact.phone}</span>
+              <span className="text-slate-200">{contact.phone}</span>
             </div>
             <div className="flex flex-col items-center gap-6 group">
               <div className="p-4 bg-white/5 rounded-full group-hover:bg-blue-900 transition-colors">
-                <MapPin className="w-6 h-6 text-blue-500" />
+                <MapPin className="w-6 h-6 text-blue-400" />
               </div>
-              <span className="max-w-[240px] text-pretty text-slate-300">{contact.address}</span>
+              <span className="max-w-[240px] text-pretty text-slate-200">{contact.address}</span>
             </div>
           </div>
           <div className="mt-24 pt-12 border-t border-white/5 flex flex-col items-center gap-8">
-            <p className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-600">
+            <p className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-400">
               © {new Date().getFullYear()} {name} • {title}
             </p>
           </div>

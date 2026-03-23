@@ -137,10 +137,10 @@ export function CVPage() {
                   <div className="w-2 h-2 rounded-full bg-blue-700 mt-1.5 shrink-0" />
                   <div className="flex-1">
                     {cert.url ? (
-                      <a 
-                        href={cert.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={cert.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="font-black text-slate-950 uppercase tracking-tight hover:text-blue-700 hover:underline transition-colors"
                       >
                         {cert.name}

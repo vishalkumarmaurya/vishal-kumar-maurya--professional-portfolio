@@ -40,12 +40,12 @@ export function HomePage() {
         {/* Hero Section */}
         <section
           id="hero"
-          className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white border-b border-slate-100 py-12"
+          className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-white border-b border-slate-100 py-12"
         >
           <div className="absolute inset-0 z-0 opacity-[0.03] bg-[radial-gradient(#1e40af_1.5px,transparent_1.5px)] [background-size:40px_40px]" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-12">
             <motion.h1
-              className="text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-black font-display text-slate-950 tracking-tighter leading-[0.85] sm:leading-[0.9]"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display text-slate-950 tracking-tighter leading-[0.9]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -53,7 +53,7 @@ export function HomePage() {
               {name}
             </motion.h1>
             <motion.p
-              className="mt-10 text-xl md:text-3xl text-blue-700 font-bold max-w-3xl mx-auto uppercase tracking-wide leading-snug"
+              className="mt-6 text-lg md:text-2xl text-blue-700 font-bold max-w-3xl mx-auto uppercase tracking-wide leading-snug"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -61,15 +61,15 @@ export function HomePage() {
               {title}
             </motion.p>
             <motion.div
-              className="mt-14 flex flex-col sm:flex-row justify-center items-center gap-6"
+              className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              <Button asChild size="lg" className="bg-slate-950 hover:bg-blue-900 text-white shadow-2xl transition-all duration-300 rounded-full h-14 px-10 text-lg font-bold">
+              <Button asChild size="lg" className="bg-slate-950 hover:bg-blue-900 text-white shadow-2xl transition-all duration-300 rounded-full h-12 px-8 text-lg font-bold">
                 <a href={`mailto:${contact.email}`}>Get In Touch</a>
               </Button>
-              <Button asChild size="lg" variant="ghost" className="text-slate-950 hover:bg-slate-50 transition-all duration-300 rounded-full h-14 px-10 text-lg font-bold group border border-transparent hover:border-slate-200">
+              <Button asChild size="lg" variant="ghost" className="text-slate-950 hover:bg-slate-50 transition-all duration-300 rounded-full h-12 px-8 text-lg font-bold group border border-transparent hover:border-slate-200">
                 <RouterLink to="/cv" className="flex items-center gap-2">
                   View Full CV <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </RouterLink>

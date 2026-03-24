@@ -1,6 +1,6 @@
 # FolioForge: Vishal Kumar Maurya's Professional Portfolio
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/vishalkumarmaurya/vishal-kumar-maurya--professional-portfolio)
 
 A visually stunning, minimalist, and responsive single-page portfolio website for an Agri-Tech professional.
 
@@ -88,7 +88,7 @@ This project is optimized for deployment on the Cloudflare network.
 
 You can also deploy this project with a single click using the button below.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/vishalkumarmaurya/vishal-kumar-maurya--professional-portfolio)
 
 ## Linting
 
